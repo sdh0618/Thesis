@@ -12,7 +12,7 @@
 % 
 % In addition to the standard formatting options, the following options are defined for the VTthesis class: proposal, prelim, doublespace, draft. 
 
-\documentclass[doublespace,draft,nopageskip]{VTthesis} % nopageskip - Removes arbitrary blank pages.
+\documentclass[doublespace,nopageskip]{VTthesis} % nopageskip - Removes arbitrary blank pages.
 
 % Using the following header instead will create a draft copy of your thesis
 % \documentclass[doublespace,draft]{VTthesis}
@@ -20,8 +20,10 @@
 % The lipsum package is just included to put dummy text in the document in order to demonstrate page headers and table of contents behavior. You should remove it once you begin writing your actual thesis or dissertation.
 \usepackage{lipsum}
 
+\usepackage{aas_macros}
 \usepackage{threeparttable}
 \usepackage{longtable}
+\usepackage{bm}
 
 \newcommand{\mrm}[1]{\mathrm{#1}}
 \newcommand{\nuc}[2]{$\mrm{^{#2}#1}$}
@@ -31,10 +33,10 @@
 
 
 % Title of your thesis
-\title{Title of your thesis goes here}
+\title{Understanding the high energy emission of millisecond pulsars for dark matter indirect detection}
 
 % You should include 3-5 keywords, separated by commas
-\keywords{Some Keywords, Subject matter, etc.}
+\keywords{dark matter, indirect detection, millisecond pulsars, gamma rays}
 
 % Your name, including middle initial(s)
 \author{Deheng Song}
@@ -46,7 +48,7 @@
 \degree{Doctor of Philosophy} 
 
 % This should be your defense date:
-\submitdate{Dec 17, 2021} 
+\submitdate{Dec 10, 2021} 
 
 % Committee members. Only have five readers and one chair available.
 % Only use the ones you need and don't include the ones you don't need.
@@ -56,9 +58,9 @@
 % You should, however, include middle initials if possible.
 \principaladvisor{Shunsaku Horiuchi}
 % \coadvisor{Vicente Esparza}
-\firstreader{Giti}
-\secondreader{John}
-\thirdreader{Tatsu}
+\firstreader{Giti Khodaparast}
+\secondreader{John Simonetti}
+\thirdreader{Tatsu Takeuchi}
 % \fourthreader{Fourth Committee Member}
 % \fifthreader{Fifth Committee Member}
 
@@ -66,17 +68,33 @@
 % \dedication{This is where you put your dedications.}
 \acknowledge{This is where you put your acknowledgments.}
 
+% \attribution{}
+
 % The abstract is required.
-\abstract{Give a brief description of your thesis here.}
-% \abstract{\lipsum [1-4]}
+\abstract{
+The Galactic center GeV excess discovered by the Fermi Large Area Telescope can be explained by 
+}
 
 % The general audience abstract is required. There are currently no word limits.
-\abstractgenaud{You are also required as of Spring 2016 to include a general audience abstract. This should be geared towards individuals outside of your field that may be reading seeking information about your work. You should avoid language that is particular to your field and clearly define any terms that may have special meaning in your discipline.}
+\abstractgenaud{
+Dark matter means the matter that doesn't interact with light. Therefore, they can not be detected by traditional method. However, they make of 80\% of the total matter.
+}
 
 \begin{document}
 % The following lines set up the front matter of your thesis or dissertation and are required to ensure proper formatting per the VT ETD standards. 
 \frontmatter
 \maketitle
+
+\chapter*{Attributions}
+
+This dissertation is based on the following papers that I have contributed to:
+\begin{itemize}
+    \item[1.] \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+    \item[2.] \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+    \item[3.] \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+    \item[4.] \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
+\end{itemize}
+
 \tableofcontents
 
 % The list of figures and tables are now optional per the official ETD standards.  Unless you have a very good reason for removing them, you should leave these lists in the document. Comment them out to remove them.
@@ -98,15 +116,267 @@
 
 % now go ahead and start writing your thesis
 \chapter{Introduction} \label{ch:introduction}
-\lipsum[1-2]
 
-% Copy/paste the code below to add sections and subsections to each chapter. Add your own text to the chapter and (sub)section labels to create custom headings.          
-\section{Millisecond pulsars} \label{se:one_section}
-\lipsum[1-4]
-\section{Inverse Compton scattering} \label{se:another_section}
-\lipsum[1-4]
-\section{Galactic center excess}
-\lipsum[1-4]
+The second half of the 20th century sees the change of the point of view of the universe. The discovery of dark matter and dark energy means that the matter made our material world -- protons, neutrons, electrons is only 5\% of the total energy budget in the universe.
+
+The standard model of particle physics is the most accurate model we have. However, it only covers 20\% matter of the total matter in the universe. The rest 80\% is made of dark matter. We know dark matter is there based on astrophysics measurements. The evidence for the existence of dark matter is overwhelming, but we know little about their particle nature. Theoretically, the weakly interacting massive particles (WIMPs) are promising candidates of dark matter. The search for particle dark matter remain one of the most important question in physics and based on the strategy, there are three types of dark matter detection: direct detection, collider production, and indirect detection.
+
+The idea of indirect detection is that dark matter produce SM particles and therefore can be detected by the observation of the cosmos. The possible probes include gamma-rays, cosmic rays, X-rays, etc. What's important for indirect detection is the existence of astrophysical sources that may emit similar signals. Millisecond pulsars, the fast rotating neutron stars, are the most important examples. In this dissertation, we study the high-energy emission of millisecond pulsars in the Galactic bulge, and globular clusters. Understanding the emission is crucial for dark matter indirect detection.
+
+This dissertation is structured as the following: this chapter provides a brief introduction to dark matter problem, including its discovery, the detection methods, and the WIMP model. Chapter 2 introduce the Galactic center excess, one of the most significant gamma-ray anomaly that may be explained by the dark matter. The millisecond pulsar explanation of the GCE is also reviewed. Chapter 3 talks about the inverse Compton emission from the millisecond pulsars in the Galactic bulge, as the high energy counterpart of the GCE. Chapter 4 discuss the CTA sensitivity to detect the IC emission from those millisecond pulsars. Chapter 5 shows the search for IC from globular clusters that is caused by the millisecond pulsar population in the systems. Chapter 6 is about the morphology of the 511 keV signal, which is another interesting anomaly in the Galactic center. We conclude the dissertation in Chapter 7.
+
+\section{Evidence for dark matter} \label{se:one_section}
+
+Gravitational evidence for dark matter is overwhelming. In this section, we review the most prominent examples in different scales.
+
+\subsection{Coma cluster and rotation curves of galaxies} \label{sse:rotation_curve}
+
+The term ``dark matter'' is first used by Fritz Zwicky in his 1933 paper~\cite{1933AcHPh...6..110Z}. He found, by studying the orbit velocity of galaxies in the outer region of the Coma cluster, that the implied mass-to-light ratio of the galaxy cluster is around 500. He concluded that most matter in the Coma cluster should be dark rather than luminous.
+% ``dark matter exists in much greater density than luminous matter''.
+
+In 1970, Vera Robin and Kent Ford found the flat rotation curves of the Andromeda galaxy~\cite{1970ApJ...159..379R}. The flat rotation curves provide one of the most compelling evidence for the dark matter. From the Newtonian dynamics, the orbit velocities of stars or gas in a galaxy is given by
+\begin{equation}
+    v(r) = \sqrt{\frac{G_N M(r)}{r}},
+\end{equation}
+where $r$ is the radius of the orbit, $G_N$ is the gravitational constant, and $M(r)$ is the amount of mass enclosed in the radius $r$. In a simple model, assuming a homogeneous and spherically symmetric distribution of mass in the galaxy, $M(r) = (4\pi/3)\rho r^3$. Therefore,
+\begin{equation}
+    v(r) = \sqrt{\frac{4\pi G_N \rho}{3}}r.
+\end{equation}
+The rotation curve is linear to the radius $r$, until the galaxy is enclosed. After that,
+\begin{equation}
+    v(r) = \sqrt{\frac{G_N M}{r}}.
+\end{equation}
+The rotation curve falls off as $1/\sqrt{r}$ at large radii beyond the distribution of baryon matter. However, flat rotation curves imply that the halo mass within the radius $r$ is linear to $r$. Therefore, the needed dark matter halo density profile has
+\begin{equation}
+    \rho(r) \sim \frac{1}{r^2}.
+\end{equation}
+
+Figure~\ref{fig:rotation_curves} shows the rotation curve of NGC 6503. A dark matter halo is needed to explain the flat rotation curve.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Intro/rotation_curves.eps}
+    \caption{Caption~\cite{1991MNRAS.249..523B}}
+    \label{fig:rotation_curves}
+\end{figure}
+
+
+\subsection{Gravitational lensing and the Bullet Cluster}
+
+Gravitational field bends the trajectory of light, according to general relativity. The light from distant objects such as galaxies will be crooked by the inhomogeneous gravitation field during the propagation. The images of the distant galaxies will therefore be distorted. This effect is called the gravitational lensing. 
+
+Naturally, the gravitation field of dark matter 
+
+\subsection{Cosmological microwave background}
+
+The Cosmological Microwave Background (CMB) is the remnant radiation from the epoch of the ``recombination'' of electrons and protons, which happens at a redshift $z = 1100$~\cite{2003moco.book.....D}. The measured CMB is a black body radiation with an average temperature $T = 2.725$K. It is extremely uniform across the sky, with temperature fluctuations at the level of $10^{-5}$~\cite{2002ARA&A..40..171H}. 
+
+The power spectrum of the CMB anisotropies is a powerful probe of cosmological parameters.
+% Critical information about the Universe can be extracted from the anisotropies of the CMB. The power spectrum of the CMB is usually studied. 
+It is commond to expand the temperature fluctuations of the CMB in spherical harmonics,
+\begin{equation}
+    \Theta(\hat{\bm n}) = \frac{\delta T}{T}(\hat{\bm n}) = \sum^{l=\infty}_{l=0}\sum^{m=l}_{m=-l} \Theta_{lm}Y_{lm}(\hat{\bm n}).
+\end{equation}
+The power spectrum $C_l$ describes the ensemble average of the fluctuations,
+\begin{equation}
+    \delta_{ll'}\delta_{mm'}C_l = \langle\Theta_{lm}\Theta^*_{l'm'}\rangle,
+\end{equation}
+which is often plotted in the scale-invariant way, with
+\begin{equation}
+    D_l = \frac{l(l+1)}{2\pi}C_l.
+\end{equation}
+
+Figure~\ref{fig:cmb} shows the measured CMB power spectrum as a function of the multipoles $l$ by the European Space Agency's \emph{Planck} satellite  ~\cite{2020A&A...641A...6P}. The relative height of the peaks in the CMB power spectrum have information such as the curvature, the matter fraction, and the dark matter fraction of the Universe. The best-fit cosmological model of Planck reads the matter fraction $\Omega_m = 0.316$ and the dark matter fraction $\Omega_\mathrm{DM} = 0.265$. The remaining energy budget of the Universe is filled by the dark energy ($\Omega_\Lambda = 0.684$). Therefore, more than 80\% of the matter in the Universe is in the form of dark matter. The CMB measurement provides the most accurate estimate of the dark matter component in the Universe.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Intro/Planck_CMB.pdf}
+    \caption{CMB power spectrum measured by Planck~\cite{2020A&A...641A...6P}}
+    \label{fig:cmb}
+\end{figure}
+
+\section{The WIMP model}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Intro/freezeout.ps}
+    \caption{Caption. Ref.~\cite{2009arXiv0901.4090H}}
+    \label{fig:my_label}
+\end{figure}
+
+Many candidates has been proposed to solve the dark matter problem. 
+
+Any viable dark matter candidate beyond the Standard Model has to: 1). not or only weakly interact with the Standard Model matter; 2). explain the relic abundance of the dark matter. The weakly interacting massive particle (WIMP) model naturally.
+
+The Boltzmann equation for the number density of the dark matter particles in the early Universe is
+\begin{equation}
+    \frac{dn_\chi}{dt} + 3Hn_\chi = \langle\sigma v\rangle(n_\chi^{\mathrm{eq}} - n_\chi).
+\end{equation}
+Here $\langle\sigma v\rangle$ is the thermal-average cross section of dark matter. On the right hand side of the Boltzmann equation, we need the first term for the production of dark matter from SM particles and the second term for the dark matter annihilation. $n_\chi^{\mathrm{eq}}$ is the number density at thermal equilibrium. For massive particles in the Maxwell-Boltzmann approximation,
+%the non-relativistic limit $m_\chi \gg T$,
+\begin{equation}
+    n_\chi^{\mathrm{eq}} = g\left( \frac{m_\chi T}{2\pi} \right)^{3/2}\exp(-m_\chi/T).
+\end{equation}
+At high temperatures $T \gg m_\chi$, dark matter is in equilibrium, $n_\chi = n_\chi^{\mathrm{eq}}$. In the other limit $T \ll m_\chi$, $n_\chi^{\mathrm{eq}}$ is suppressed by the exponential $\exp(-m_\chi/T)$. The production of dark matter $\langle\sigma v\rangle n_\chi^{\mathrm{eq}}$ is negligible. The number density of dark matter $n_\chi$ drains rapidly because of the Hubble expansion and the annihilation. The freeze-out of dark matter happens when the annihilation is comparable with the expansion rate of the Universe,
+\begin{equation}
+    \langle\sigma v\rangle n_\chi \sim H.
+\end{equation}
+The Hubble rate $H = 1.66\sqrt{g_*(T)}/M_{pl}$, where $g_*(T)$ is the effective number of degree of freedom at the temperature $T$ and $M_{pl} \approx 1.22\times 10^{19}$ GeV is the Planck mass. The number density of dark matter at the freeze-out temperature $T_f$ is therefore,
+\begin{equation}
+    \left.n_\chi\right|_{T = T_f} \approx \left.\frac{H}{\langle\sigma v\rangle}\right|_{T = T_f} \approx \frac{1.66\sqrt{g_*(T_f)}T_f^2}{\langle\sigma v\rangle M_{pl}}.
+\end{equation}
+The relic abundance of dark matter today ($T=T_\mathrm{CMB}$) is
+\begin{equation}
+    \Omega_\mathrm{DM} = \frac{\rho_\mathrm{DM}}{\rho_c} = \frac{\left. m_\chi n_\chi\right|_{T = T_f}}{\rho_c}\frac{s(T_\mathrm{CMB})}{s(T_f)}.
+\end{equation}
+The entropy density $s(T) = (2\pi/45)g_{*,S}(T)T^3$ scales with $1/a^3$. For dark matter with a weak scale mass and annihilation cross section, the freeze-out temperature $T_f \sim m_\chi/25$, one can estimate the relic abundance
+\begin{equation}
+    \Omega_\mathrm{DM} \approx 0.26 \left( \frac{m_X}{100\ \mathrm{GeV}} \right) \left( \frac{2.2\times 10^{-26}\ \mathrm{cm}^3\ \mathrm{s}^{-1}}{\langle\sigma v\rangle} \right).
+\end{equation}
+In the estimate, we use $g_{*,S}(T_\mathrm{CMB}) = 3.909$ and $g_{*,S}(T_f) = g_{*}(T_f) = 86.25$. 
+
+The value $\langle\sigma v\rangle = 2.2\times 10^{-26}\ \mathrm{cm}^3\ \mathrm{s}^{-1}$ is referred as the thermal cross section of dark matter.
+
+\section{Searching for dark matter}
+
+General idea of dark matter indirect detection
+
+
+
+\chapter{Galactic center excess} \label{ch:GCE}
+
+Introduce the discovery of the signal
+
+\subsection{Dark matter explanation}
+
+Annihilation spectrum, J-factor, NFW profile, etc
+
+\subsection{Millisecond pulsar explanation}
+
+Formation and high-energy emission, population in the bulge
+
+\subsection{Stellar mass distribution}
+
+\subsubsection{Boxy Bulge}
+
+The mid- and near-IR signals of the inner Galaxy stars reveal a bar structure. The Galactic bar makes a tilt angle $\theta_0$ from the GC-Sun direction while the Sun is located at $\sim$10 pc above the Galactic plane. The line-of-sight view of the Galactic bar shows a boxy shape, so it is often referred as the Boxy Bulge. Here, we introduce the bar model derived from data taken with the Diffuse Infrared Background Experiment instrument on board the Cosmic Background Explorer~\cite{1998ApJ...492..495F}. The shape of the bar is a generalized ellipsoid which can be parametrized as
+\begin{align}\label{eq:Rs}
+  R_{\perp}^{C_{\perp}} &= \left(\dfrac{|X'|}{a_x}\right)^{C_{\perp}} + \left(\dfrac{|Y'|}{a_y}\right)^{C_{\perp}},\\
+  R_s^{C_{\parallel}} &= R_{\perp}^{C_{\parallel}} + \left(\dfrac{|Z'|}{a_z}\right)^{C_{\parallel}},
+\end{align}
+where $R_s$ is the effective radius; $a_x$, $a_y$, and $a_z$ are the scale lengths; $C_\perp$ and $C_\parallel$ are the face-on and edge-on shape parameters; and $X'$, $Y'$, and $Z'$
+are directions in the bar
+coordinate. 
+% Reference~\cite{Freudenreich:1997bx} considered three different models for the radial dependence: model S, $\rho\propto\text{sech}^2(R_s)$; model E, $\rho\propto\exp(R_s^{-n})$; model P, $\rho\propto[1+(R_s/R_c)^n]$. We use model S here since it was the best-fit model found in Ref.~\cite{Freudenreich:1997bx}.
+
+The models are truncated by a Gaussian function at the
+radius $R_{\text{end}}$ with scale length $h_{\text{end}}$. For model S in Ref~\cite{1998ApJ...492..495F}, the density of the bar~\footnote{We notice that there was a typo in the argument of the $\exp$ function in Eq.(14) of Ref~\cite{1998ApJ...492..495F} which has been corrected in our Eq.~\ref{eq:Rs}. We have confirmed this in private communication with H. Freudenreich.} is given by,
+\begin{equation}\label{eq:rhobar}
+  \rho_{\text{bar}}\propto \begin{cases}
+    \text{sech}^2(R_s), & R \leq R_{\text{end}},\\
+    \text{sech}^2(R_s)e^{-\frac{(R-R_{\text{end}})^2}{h_{\text{end}}^2}}, &   R > R_{\text{end}}.
+  \end{cases}
+\end{equation}
+
+The bar parameters 
+%used in our work 
+are displayed in Table~\ref{tab:modelS}. These correspond to the best-fit values for model S using the so-called primary mask~\cite{1998ApJ...492..495F}. 
+% Recent studies of the bulge suggest larger tilt angles of $\sim 30^\circ$~\cite{doi:10.1093/mnras/stt1045,Portail:2016vei}. However, we keep the best-fit angle from Ref.~\cite{Freudenreich:1997bx} since it is consistent with the ISRF implemented in \texttt{GALPROP} v54. Also, as we discuss later, we do not expect the IC emissions to be very sensitive to this angle. Overall, the stellar mass of the Galactic bulge is $(1.4-1.7)\times 10^{10}$ solar masses $(M_\odot)$~\cite{2016ARA&A..54..529B}.
+
+% \begin{table}[htb]
+% \centering
+% \caption{Approximate computation times in hh:mm:ss for full order 						versus reduced order models.}
+% \begin{tabular}{ccc}
+% \toprule
+% & \multicolumn{2}{c}{Computation Time}\\
+% \cmidrule(r){2-3}
+% $\overline{U}_{in}$ m/s & Full Model & ROM \\
+% \midrule
+% 0.90 & 2:00:00 & 2:08:00\\
+% 0.88 & 2:00:00 & 0:00:03\\
+% 0.92 & 2:00:00 & 0:00:03\\
+% \midrule
+% Total & 6:00:00 & 2:08:06\\
+% \bottomrule
+% \end{tabular}
+% \label{tab:time_rom}
+% \end{table}
+
+\begin{table}[htb]
+\centering
+\caption{ The parameter values for the Galactic bar model S of Ref.~\cite{1998ApJ...492..495F}.}
+    \begin{tabular}{ll}
+    \toprule
+      Parameters & Model S \\ 
+      \midrule
+      Distance to the Galactic Plane $Z_0$ (pc) & 16.46 $\pm$ 0.18\\
+      Bar Tilt Angle $\theta_0$ (deg) & 13.79 $\pm$ 0.09\\
+      Bar $X$ Scale Length $a_x$ (kpc) & 1.696 $\pm$ 0.007 \\
+      Bar $Y$ Scale Length $a_y$ (kpc) & 0.6426 $\pm$ 0.0020 \\
+      Bar $Z$ Scale Length $a_z$ (kpc) & 0.4425 $\pm$ 0.0008 \\
+      Bar Cutoff Radius $R_{\text{end}}$ (kpc) & 3.128 $\pm$ 0.014 \\
+      Bar Cutoff Scale Length $h_{\text{end}}$ (kpc) & 0.461 $\pm$ 0.005 \\
+      Bar Face-On Shape $C_\perp$ & 1.574 $\pm$ 0.014 \\
+      Bar Edge-On Shape $C_\parallel$ & 3.501 $\pm$ 0.016\\
+      \bottomrule
+    \end{tabular}
+\label{tab:modelS}
+\end{table}
+
+\subsubsection{Nuclear bulge}\label{sec:nb}
+
+The Nuclear Bulge refers to a dense stellar structure contained in the innermost region of the Galaxy. 
+Reference~\cite{2002A&A...384..112L} revealed the distribution of stars and interstellar matter in the Nuclear Bulge from IRAS and COBE DIRBE data. Associated with the Central Molecular Zone of the Galaxy, the Nuclear Bulge has younger stars and undergoes active star formation, distinguishing it from the old and evolved stars of the Galactic bulge~\cite{2002A&A...384..112L}. 
+% The Nuclear Bulge makes up around 10\% of the stellar mass in the bulge and its gamma-ray luminosity is comparable with that of the Galactic bulge~\cite{Macias:2016nev,Bartels:2017vsx}. 
+The Nuclear Bulge resides within the inner 230 pc of the GC and is made of two components:
+
+\paragraph{Nuclear stellar cluster (NSC):} The NSC is a relatively small and very dense spherically symmetric structure in the innermost part of the NB. The stellar density in this region has been shown~\cite{Launhardt:2002tx} to be well described by a simple radial power-law function
+\begin{equation}\label{eq:NSC}
+  \rho_{\text{NSC}}(R)=\dfrac{\rho_0}{1+\left(\dfrac{R}{R_0}\right)^{n}},
+\end{equation}
+with best-fit power-law indices $n = 2.0$ for $R \leq 6$ pc and $n = 3.0$ for $R > 6$ pc, with core radius fixed to $R_0 = 0.22$ pc. The stellar mass of the entire NSC is $(3\pm$ 1.5) $\times$ 10$^7$ $M_\odot$.
+
+\paragraph{Nuclear stellar disk (NSD):} Surrounding the NSC is the NSD which makes up most of the stellar mass of the NB. The NSD is a cylindrical object with a radial dependence approximately described by a broken power-law function,
+\begin{equation}\label{eq:rhonsd}
+  \rho_{\text{NSD}}(r) = \begin{cases}
+    \rho_0\ r^{-0.1}, & r < 120\ \text{pc},\\
+    \rho_1\ r^{-3.5}, & 120\ \text{pc} \leq r < 220\ \text{pc},\\
+    \rho_2\ r^{-10}, & r \geq 220\ \text{pc}.
+  \end{cases}
+\end{equation}
+The scale densities $\rho_0$, $\rho_1$, and $\rho_2$ ensure the continuity of the NSD density function. The density variation along the $z$ direction is given by an exponential cutoff with a scale height 45 $\pm$ 5 pc. The stellar mass of the entire NSD is (1.4 $\pm$ 0.6) $\times$ 10$^9$ $M_\odot$.
+
+\subsubsection{X-shaped Bulge}
+
+The X-shaped bulge \citep{2016AJ....152...14N} is potentially another structure of stars in the inner Galaxy. It has been extracted from WISE W1 and W2 data at $3.4$ and $4.6\,\mrm{\mu m}$, respectively.
+%
+It is argued that the Milky Way bulge is morphologically X-shaped, following from expectations of dynamical models and observations of other barred galaxies.
+%
+Further, the population of stars leading to this shape due of their orbital motion contribute to about 40--45\% of the total bulge mass \citep{Portail2015_MilkyWayorbots_Xbulge}.
+%
+This fraction can be used to estimate the luminosity of the X-bulge template, as it is not parametrised in 3D.
+%
+The arms of the WISE X-bulge (see Fig.\,\ref{fig:XB_map}) appear asymmetric, being longer for positive longitudes ($l \lesssim 7.5^{\circ}$) than for negative longitudes ($l \gtrsim -5^{\circ}$).
+%
+This is interpreted as a projection effect of the bulge being $27^{\circ}$ tilted to the line of sight \citep{Wegg2013_bulgebar}.
+%
+The X-bulge is thus said to trace faint red clump stars with its short arms more distant to the Sun and bright red clump with its long arms closer to the Sun \cite[][cf. discussion about the `double red clump' of the Milky Way]{Lee2018_DoubleRedClump}.
+%
+However, we note that the remaining WISE bands W3 and W4 at $12$ and $22\,\mrm{\mu m}$, respectively, mainly trace dust between $\approx 100$ and $250\,\mrm{K}$ rather than star light and show no enhanced X-shape.
+
+Figure~\ref{fig:bulge_templates} shows the maps for the Boxy Bulge (left), Nuclear Bulge (middle), and X-bulge (right).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.32\textwidth]{Figures/511keV/map_BB_asinh_grid.pdf}
+    \includegraphics[width=0.32\textwidth]{Figures/511keV/map_NB_log_grid_20x20.pdf}
+    \includegraphics[width=0.32\textwidth]{Figures/511keV/map_XB_asinh_grid_20x20.pdf}
+    \caption{Maps for the Boxy Bulge (left), Nuclear Bulge (middle), and X-bulge (right). Figures are reproduced based on the best-fit models in Ref.~\cite{1998ApJ...492..495F, 2002A&A...384..112L,2016AJ....152...14N}.}
+    \label{fig:bulge_templates}
+\end{figure}
+
+\subsection{Morphology of the GCE}
+
+The stellar mass distribution in the inner Galaxy is unique and complicated. It shares few feature with the dark matter distribution (the NFW profile), which is spherically symmetric. 
+
 
 \chapter{Inverse Compton emission from millisecond pulsars in the Galactic bulge} \label{ch:IC_MSPs}
 
@@ -157,11 +427,32 @@ radius $R_{\text{end}}$ with scale length $h_{\text{end}}$. For model S, the den
 
 The bar parameters used in our work are displayed in Table~\ref{tab:modelS}. These correspond to the best-fit values for model S using the so-called primary mask~\cite{Freudenreich:1997bx}. Recent studies of the bulge suggest larger tilt angles of $\sim 30^\circ$~\cite{doi:10.1093/mnras/stt1045,Portail:2016vei}. However, we keep the best-fit angle from Ref.~\cite{Freudenreich:1997bx} since it is consistent with the ISRF implemented in \texttt{GALPROP} v54. Also, as we discuss later, we do not expect the IC emissions to be very sensitive to this angle. Overall, the stellar mass of the Galactic bulge is $(1.4-1.7)\times 10^{10}$ solar masses $(M_\odot)$~\cite{2016ARA&A..54..529B}.
 
-\begin{table}[t!]
-  \caption{\label{tab:modelS} The parameter values for the Galactic bar model S of Ref.~\cite{Freudenreich:1997bx}.}
-  % \begin{ruledtabular}
+% \begin{table}[htb]
+% \centering
+% \caption{Approximate computation times in hh:mm:ss for full order 						versus reduced order models.}
+% \begin{tabular}{ccc}
+% \toprule
+% & \multicolumn{2}{c}{Computation Time}\\
+% \cmidrule(r){2-3}
+% $\overline{U}_{in}$ m/s & Full Model & ROM \\
+% \midrule
+% 0.90 & 2:00:00 & 2:08:00\\
+% 0.88 & 2:00:00 & 0:00:03\\
+% 0.92 & 2:00:00 & 0:00:03\\
+% \midrule
+% Total & 6:00:00 & 2:08:06\\
+% \bottomrule
+% \end{tabular}
+% \label{tab:time_rom}
+% \end{table}
+
+\begin{table}[htb]
+\centering
+\caption{ The parameter values for the Galactic bar model S of Ref.~\cite{Freudenreich:1997bx}.}
     \begin{tabular}{ll}
-      Parameters & Model S \\ \hline
+    \toprule
+      Parameters & Model S \\ 
+      \midrule
       Distance to the Galactic Plane $Z_0$ (pc) & 16.46 $\pm$ 0.18\\
       Bar Tilt Angle $\theta_0$ (deg) & 13.79 $\pm$ 0.09\\
       Bar $X$ Scale Length $a_x$ (kpc) & 1.696 $\pm$ 0.007 \\
@@ -170,9 +461,10 @@ The bar parameters used in our work are displayed in Table~\ref{tab:modelS}. The
       Bar Cutoff Radius $R_{\text{end}}$ (kpc) & 3.128 $\pm$ 0.014 \\
       Bar Cutoff Scale Length $h_{\text{end}}$ (kpc) & 0.461 $\pm$ 0.005 \\
       Bar Face-On Shape $C_\perp$ & 1.574 $\pm$ 0.014 \\
-      Bar Edge-On Shape $C_\parallel$ & 3.501 $\pm$ 0.016
+      Bar Edge-On Shape $C_\parallel$ & 3.501 $\pm$ 0.016\\
+      \bottomrule
     \end{tabular}
-  % \end{ruledtabular}
+\label{tab:modelS}
 \end{table}
 
 \subsubsection{Nuclear bulge}\label{sec:nb}
@@ -210,11 +502,11 @@ where we use a core radius $R_s$ = 23.1 kpc, Sun-GC distance $R_\odot$ = 8.25 kp
 We used the publicly available software package \texttt{GALPROP} v54~\cite{Galprop,Galpropsupplementary} in order to calculate the secondary gamma-ray emission from CR $e^\pm$ injected by MSPs. GALPROP is a numerical tool that solves the particle transport equations for a given source distribution and boundary conditions for all species of CRs. In particular, CRs can get accelerated by a multitude of different sources and then propagate long distances in the Galaxy. During propagation they produce secondary particles via interactions with the ISM and ISRF. Galactic diffuse gamma-ray emission is produced via $\pi_0$ decay, bremsstrahlung, and IC scattering, while lower-energy emission is produced via synchrotron radiation.
 
 The CR $e^\pm$ transport equation is a partial differential equation of the form
-\begin{eqnarray}
+\begin{align}
   \label{eq:prop_eq}
-  \dfrac{d\psi}{dt} =\ &&q(\vec{r},p)+\vec{\nabla}\cdot(D_{xx}\vec{\nabla}\psi-\vec{V}\psi)\nonumber\\
-                       &&+\dfrac{\partial}{\partial p}p^2D_{pp}\dfrac{\partial}{\partial p}\dfrac{1}{p^2}\psi-\dfrac{\partial}{\partial p}[\dot{p}\psi-\dfrac{p}{3}(\vec{\nabla}\cdot\vec{V})\psi],
-\end{eqnarray}
+  \dfrac{d\psi}{dt} = &q(\vec{r},p)+\vec{\nabla}\cdot(D_{xx}\vec{\nabla}\psi-\vec{V}\psi)\nonumber\\
+                       &+\dfrac{\partial}{\partial p}p^2D_{pp}\dfrac{\partial}{\partial p}\dfrac{1}{p^2}\psi-\dfrac{\partial}{\partial p}[\dot{p}\psi-\dfrac{p}{3}(\vec{\nabla}\cdot\vec{V})\psi],
+\end{align}
 where $\psi = \psi(\vec{r},p,t)$ is the density per unit of the total particle momentum, $D_{xx} = \beta D_0 (\frac{\rho}{\rho_0})^\delta$ is the spatial diffusion coefficient where $\rho$ is the rigidity of the $e^\pm$ and $\beta = v/c$, $\vec{V}$ is the convection velocity and $q(\vec{r},r)$ is the source term. Reacceleration is introduced as diffusion in momentum space with coefficient $D_{pp}$, which is related to $D_{xx}$ and the Alfv\'{e}n speed $v_A$. We refer interested readers to the excellent review in Ref.~\cite{Strong:2007nh} for more details. We keep convection off, $\vec{V}=0$.
 
 Given the source function of MSPs, the IC energy losses at each spatial bin are calculated by
@@ -246,22 +538,57 @@ The factor $c/4\pi$ is a convention in the {\tt GALPROP} code. The source functi
 \end{equation}
 We will explore a range of $e^\pm$ spectra as detailed in Sec.~\ref{sec:spectrum}.
 
-\begin{figure}[t!]
-  \includegraphics[width = \columnwidth]{Figures/IC_MSPs/injection_skymap_bulge.pdf}
-  \includegraphics[width = \columnwidth]{Figures/IC_MSPs/injection_skymap_nfw.pdf}
-  \caption{MSP $e^\pm$ source distributions for the stellar (top panel) and the NFW$^2$ (bottom panel) template over a $20^\circ \times 20^\circ$ region around the GC. The normalizations are determined by gamma-ray luminosities through Eq.~(\ref{eq:Le}) (see text).
-The source distributions are noticeably different. While the stellar template is rectangular and asymmetric due to the tilting angle between the Galactic bar's long axis and the GC-Sun direction, the NFW$^2$ template is spherically symmetric. The very bright quasielliptical region in the central few degrees in the top panel corresponds to the NB stellar component.}
-  \label{fig:injection_skymap}
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[h]{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.90]{Figures/IC_MSPs/injection_skymap_bulge.pdf}
+		\caption{Stellar template}
+		\label{sfig:first_subfig}
+	\end{subfigure}
+	\begin{subfigure}[h]{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.90]{Figures/IC_MSPs/injection_skymap_nfw.pdf}
+		\caption{NFW$^2$ template}
+		\label{sfig:second_subfig}
+	\end{subfigure}
+	\caption{MSP $e^\pm$ source distributions for the stellar (a) and the NFW$^2$ (b) template over a $20^\circ \times 20^\circ$ region around the GC. The normalizations are determined by gamma-ray luminosities through Eq.~(\ref{eq:Le}) (see text). The source distributions are noticeably different. While the stellar template is rectangular and asymmetric due to the tilting angle between the Galactic bar's long axis and the GC-Sun direction, the NFW$^2$ template is spherically symmetric. The very bright quasielliptical region in the central few degrees in the top panel corresponds to the NB stellar component.}
+	\label{fig:main_figure}
 \end{figure}
-\begin{figure}[t!]
-  \includegraphics[width = \columnwidth]{Figures/IC_MSPs/injection_lon.pdf}
-  \includegraphics[width = \columnwidth]{Figures/IC_MSPs/injection_lat.pdf}
-  \caption{Longitudinal (top panel) and latitudinal (bottom panel)
-    profiles for the MSP $e^\pm$ source distributions considered in this work. The profiles
-    are for 10$^\circ$ wide bands and show the longitude and latitude
-    from $15^\circ$ to $-15^\circ$. Noticeable morphological differences are seen in both directions.}
-  \label{fig:injection_profile}
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[h]{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.90]{Figures/IC_MSPs/injection_lon.pdf}
+		\caption{Subcaption number one}
+		\label{sfig:first_subfig}
+	\end{subfigure}
+	\begin{subfigure}[h]{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.90]{Figures/IC_MSPs/injection_lat.pdf}
+		\caption{Subcaption number two}
+		\label{sfig:second_subfig}
+	\end{subfigure}
+	\caption{Here is my main caption describing the relationship between the 4 subimages}
+	\label{fig:main_figure}
 \end{figure}
+% \begin{figure}[htb]
+% \centering
+%   \includegraphics[width = 0.45\textwidth]{Figures/IC_MSPs/injection_skymap_bulge.pdf}
+%   \includegraphics[width = 0.45\textwidth]{Figures/IC_MSPs/injection_skymap_nfw.pdf}
+%   \caption{MSP $e^\pm$ source distributions for the stellar (top panel) and the NFW$^2$ (bottom panel) template over a $20^\circ \times 20^\circ$ region around the GC. The normalizations are determined by gamma-ray luminosities through Eq.~(\ref{eq:Le}) (see text). The source distributions are noticeably different. While the stellar template is rectangular and asymmetric due to the tilting angle between the Galactic bar's long axis and the GC-Sun direction, the NFW$^2$ template is spherically symmetric. The very bright quasielliptical region in the central few degrees in the top panel corresponds to the NB stellar component.}
+%   \label{fig:injection_skymap}
+% \end{figure}
+% \begin{figure}[t!]
+%   \includegraphics[width = \columnwidth]{Figures/IC_MSPs/injection_lon.pdf}
+%   \includegraphics[width = \columnwidth]{Figures/IC_MSPs/injection_lat.pdf}
+%   \caption{Longitudinal (top panel) and latitudinal (bottom panel)
+%     profiles for the MSP $e^\pm$ source distributions considered in this work. The profiles
+%     are for 10$^\circ$ wide bands and show the longitude and latitude
+%     from $15^\circ$ to $-15^\circ$. Noticeable morphological differences are seen in both directions.}
+%   \label{fig:injection_profile}
+% \end{figure}
 
 To show the source distribution and their relative injection intensities we produce injection intensity maps obtained by integrating along the line-of-sight direction the corresponding source density models,
 \begin{equation}
@@ -279,17 +606,20 @@ The maximum energy that MSPs can accelerate $e^{\pm}$ to is estimated to be $\si
   \dfrac{dN}{dEdt} \propto E^{-\Gamma}\exp(-E/E_{\text{cut}}),
 \end{equation}
 where $\Gamma$ is the spectral slope and $E_{\text{cut}}$ is the energy cutoff. We vary $\Gamma$ between 1.5 and 2.5, while $E_{\text{cut}}$ is varied between 10 and 100 TeV. The combinations of spectral parameters assumed in this work are listed in Table~\ref{tab:msp_spectrum}. Note that our choice of spectral parameters represents the entire MSP population in the Galactic bulge.
-\begin{table}[t!]
+\begin{table}[htb]
   \centering
   \caption{Injection spectral parameters of MSP $e^{\pm}$ adopted in this work. See Eq.~(\ref{eq:msp_spectrum}).}
-    \begin{tabular}{lcc}\hline\hline
+    \begin{tabular}{lcc}
+    \toprule
     Model Name&$\Gamma$ & $E_{\text{cut}}$\\
-    & &  (TeV) \\\hline
+    & &  (TeV) \\
+    \midrule
     Baseline &2.0 & 50 \\
     Inj1&1.5 & 50 \\
     Inj2&2.5 & 50 \\
     Inj3&2.0 & 10 \\
-    Inj4&2.0 & 100\\\hline\hline
+    Inj4&2.0 & 100\\
+    \bottomrule
     \end{tabular}
   \label{tab:msp_spectrum}
 \end{table}
@@ -304,21 +634,23 @@ In our simulations, the propagation volume extends to $\pm$20 kpc in both the $X
 
 After choosing the resolution, Eq.~(\ref{eq:rhobar}) can be converted to the number of MSPs per spatial bin and normalized to reproduce the total number of MSPs that inhabit the Galactic bulge~($\sim 10^4$ \cite{Gonthier:2018ymi}). We find that every (0.125 kpc)$^3$ bin corresponds to $\sim 40$ MSPs at the GC, and $\sim 4$ MSPs at 3 kpc along the long axis of the Galactic bar. We thus approximate the MSP distribution as a smooth function in our simulations.
 
-\begin{table}[t!]
+\begin{table}[htb]
   \centering
-  \caption{\label{tab:dpara} Propagation parameter setups considered in this study. Our baseline model corresponds to the best-fit propagation parameter in the scan for low-mass isotopes in Ref.~\cite{Johannesson:2016rlh}, while the five additional models reflect the 95\% confidence contours in their propagation parameter scan \cite{Johannesson:2016rlh} (see text).}
-  % \begin{ruledtabular}
+  \caption{Propagation parameter setups considered in this study. Our baseline model corresponds to the best-fit propagation parameter in the scan for low-mass isotopes in Ref.~\cite{Johannesson:2016rlh}, while the five additional models reflect the 95\% confidence contours in their propagation parameter scan \cite{Johannesson:2016rlh} (see text).}
     \begin{tabular}{ c c c c c }
+    \toprule
       & $D_0$ & $z_h$ & $v_A$  &$\delta$ \\
-      & (10$^{28}$ cm$^2$ s$^{-1}$) & (kpc) & (km s$^{-1}$) & \\ \hline
+      & (10$^{28}$ cm$^2$ s$^{-1}$) & (kpc) & (km s$^{-1}$) & \\ 
+      \midrule
       Baseline & 6.330 & 9.507 & 8.922 & 0.466 \\
       Model 1 & 3.159 & 9.507 & 8.922 & 0.466 \\
       Model 2 & 7.006 & 9.507 & 8.922 & 0.573 \\
       Model 3 & 8.072 & 9.507 & 8.922 & 0.351 \\
       Model 4 & 2.748 & 3.000 & 8.922 & 0.466 \\
       Model 5 & 7.742 & 19.280 & 8.922 & 0.466 \\
+      \bottomrule
     \end{tabular}
-  % \end{ruledtabular}
+\label{tab:dpara}
 \end{table}
 
 We adopt the best-fit propagation of Ref.~\cite{Johannesson:2016rlh} with the default $e^\pm$ spectrum of Ref.~\cite{Yuan:2014yda} as our baseline setup. In order to evaluate the impact of different propagation and spectral assumptions, we consider different propagation model setups in Table~\ref{tab:dpara} and the different $e^{\pm}$ injection spectra listed in Table~\ref{tab:msp_spectrum}. For our baseline spectral setup we explore all variations in propagation setup. For our baseline propagation setup we explore all $e^{\pm}$ injection spectral combinations. In all our simulations the efficiency of the MSP $e^\pm$ is fixed to $f_e^\pm$ = 0.1.
@@ -1052,7 +1384,11 @@ The modelling of the distribution of MSPs $e^\pm$ throughout the Galactic bulge 
 
 Future advances in our understanding of the MSPs' $e^\pm$ injection spectrum will help reduce the impact of this component on the sensitivity. On the theory side, future global magnetosphere simulations that include non-dipolar fields could provide a clearer picture of the $e^\pm$ injection mechanisms and predicted spectrum~\citep{Harding:2021yuv}. On the phenomenological side, multiwavelength measurements and modeling of unresolved MSPs in globular clusters~\citep{Ndiyavala:2017hoh, Song:2021zrs} and SFGs~\citep{Sudoh:2020hyu}, could reveal the characteristics of the MSPs $e^\pm$ injection spectra. 
 
-\chapter{Gamma rays from globular clusters} \label{ch:globular_cluster}
+\chapter{Evidence for a high-energy tail in the gamma-ray spectra of globular clusters} \label{ch:globular_cluster}
+
+% \section{Attributions}
+
+% This chapter is a reproduction of the following paper:
 
 \section{Introduction}\label{sec:intro}
 
@@ -2079,7 +2415,9 @@ In summary, our analysis reveals strong evidence for {soft} IC emission in \text
 
 % This is the standard bibtex file. Do not include the .bib extension in <bib_file_name>.
 % Uncomment the following lines to include your bibliography: 
-% \bibliography{VTthesis}
+\bibliography{VTthesis}
+\bibliographystyle{abbrvnat}
+% \bibliographystyle{unsrtnat}
 % \bibliographystyle{plainnat}   
 
 % This formats the chapter name to appendix to properly define the headers:

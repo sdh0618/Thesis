@@ -23,8 +23,10 @@
 %   v1.6 Added List of Abbreviations, Carrie Cross, 9/8/17
 %   v1.7 Fixed excess whitespace problems, Carrie Cross & LianTze Lim, 9/20/17
 %   v1.8 Modified date-setting macro, Carrie Cross, 10/5/17
-%	v1.9 Changed the LaTex rendering engine, Carrie Cross & Robert Browder, 	     4/27/18
+%	v1.9 Changed the LaTex rendering engine, Carrie Cross & Robert Browder, 4/27/18
 %	v2.0 Updated instructions, Carrie Cross & Robert Browder, 4/30/18
+%   v2.1 Created flexible page numbering for front matter, Carrie Cross & Robert Browder, 12/19/19
+%   v2.2 Updated code for disabling ligatures to comply with Tex Live 2019 standards, Carrie Cross & LianTze Lim, 5/8/2020
 %-------------------------------------------------------------------------
 
 %%% IDENTIFICATION --------------------------------------------------------
@@ -59,21 +61,21 @@
 \ProcessOptions
 
 %%% PACKAGE LOADING -------------------------------------------------------
-%% based on std report class
+%% based on standard report class
 \LoadClass[12pt,letterpaper,twoside]{report}
 
 %% AMSLaTeX math environments and symbols
 \RequirePackage{amsmath,amsthm,amssymb,amsfonts}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{enumerate}
-\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage[numbers,sort]{natbib}
 \RequirePackage{paralist}
 \RequirePackage[titletoc,page]{appendix}
 \RequirePackage[nottoc]{tocbibind}
 
 %Use the following code to disable ligatures:
 \usepackage{fontspec}
-%\setmainfont[Ligatures={NoRequired,NoCommon,NoContextual}]{Latin Modern Roman} %Set your font type here. The default font for this document class is Latin Modern Roman. 
+\setmainfont[Ligatures={NoCommon,NoRare},SmallCapsFont=TeX Gyre Termes,SmallCapsFeatures={Letters=SmallCaps}]{Latin Modern Roman}
 
 %package required for abbreviations page
 \usepackage{nomencl}
@@ -94,35 +96,37 @@
 \ifbool{@dbl}{\doublespace}{}
 
 % links for references
-\RequirePackage[pagebackref]{hyperref}
+\RequirePackage[final,colorlinks=true,allcolors=blue]{hyperref}
 
 % For including pdf images: 
-%\RequirePackage[final]{graphicx}
+\usepackage{graphicx}
+\usepackage{csquotes}
 %\RequirePackage{float}
 
-% MATLAB Code formatting
+% MATLAB Code formattings
 \RequirePackage{listings}
 \RequirePackage{verbatim}
+
 
 % Misc Packages
 \RequirePackage{booktabs}
 \RequirePackage[mathscr]{eucal}
 \RequirePackage{tikz}
 \usetikzlibrary{shapes,arrows}
+\usepackage{todonotes}
 
 % Packages required for subfigures
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
 
 % Place a Draft Watermark, if a draft document
 \ifbool{@dft}{
   % \cofeAm{0.7}{0.75}{2}{0}{0}
   \usepackage[firstpage]{draftwatermark}
-  \SetWatermarkScale{1} %Smaller numbers decrease the size of the text. Originally set to 6. 
+  \SetWatermarkScale{1} % Smaller numbers decrease the size of the watermark text. Originally set to 6. 
   \SetWatermarkLightness{0.7}
 }
+
 
 % Define Theorems and such
 \newtheorem{proposition}{Proposition}[chapter]
@@ -149,9 +153,10 @@ frame=single,
   stepnumber=1, %line number every line
   numbersep=5pt,
   tabsize=2, %set tabs to two spaces
-  basicstyle=\small, % print whole listing small
+  basicstyle=\footnotesize, % print whole listing small
   keywordstyle=\bfseries,% green keywords
   stringstyle=\ttfamily % typewriter type for strings
+  captionpos=b,% sets the caption-position to bottom
 }
 
 % \author,\title are defined in book; here are the rest of the front matter defining macros:
@@ -175,7 +180,7 @@ frame=single,
 
 \ifnum\month>9
     \@tempcnta=\year 
-    %\To advance the date by one year:
+    % Un-comment the following line to advance the date by one year:
     %\advance\@tempcnta by 1 
     \edef\@copyrightyear{\number\the\@tempcnta}
 \else
@@ -249,24 +254,27 @@ frame=single,
     {\clearpage}
     {\cleardoublepage}
   \clearpage
-  \pagenumbering{roman}
+  \pagenumbering{roman} % defines page number style for front matter
   \fancyhead[L,R]{}
   \ifbool{@dft}{\fancyhead[C]{\textbf{DRAFT}}}{\fancyhead[C]{}}
   \fancyfoot[C]{\thepage}
   \fancyfoot[L,R]{}
   \renewcommand\headrulewidth{0.0pt}}
+  
 \newcommand{\mainmatter}{
   \ifbool{@nopgskip}
     {\clearpage}
     {\cleardoublepage}
-  \pagenumbering{arabic}
+  \pagenumbering{arabic} % defines page number style for main matter
   \fancyhead[LE,RO]{\thepage}
   \fancyhead[RE]{\sc \leftmark}
   \fancyhead[LO]{\sc \rightmark}
   \ifbool{@dft}{\fancyfoot[C]{\textbf{DRAFT}}}{\fancyfoot[C]{}}
   \renewcommand\headrulewidth{0.0pt}}
+  
 \newcommand{\biblio}{
   \fancyhead[C]{\bibname}}
+  
 \newcommand{\backmatter}{
   \ifbool{@nopgskip}
     {\clearpage}
@@ -278,7 +286,7 @@ frame=single,
 \apptocmd{\appendix}{\backmatter}{}{}
 
 %Set up title page, abstract page, dedication page, and acknowledgement page
-\def\titlepage{%
+\def\titlepage{
   \thispagestyle{empty}
   \begin{center}
   {\Large \@title}\\
@@ -320,30 +328,29 @@ frame=single,
 
   \end{center}
 
-  \newpage
-  \addtocounter{page}{1}
+  \newpage % This applies to the numbering of the front matter.
+  \addtocounter{page}{1} 
 }
 
 \def\abspage{
-  \thispagestyle{empty}
-  \begin{center}
+\pagestyle{empty} % Suppresses page numbers for all abstract pages.
   \noindent {\Large \@title} \\
-
+    
   \vfill
   \noindent  \@author \\
   \vfill
 
   (ABSTRACT)
-  \end{center}
   \vfill
 
   \@abstract
-  \newpage
+  \vfill
+ \newpage
+
 }
 
 \def\absgapage{
-  \thispagestyle{empty}
-  \begin{center}
+\pagestyle{empty} % Suppresses page numbers for all general audience abstract pages.
   \noindent {\Large \@title} \\
 
   \vfill
@@ -351,11 +358,10 @@ frame=single,
   \vfill
 
   (GENERAL AUDIENCE ABSTRACT)
-  \end{center}
   \vfill
-
   \@abstractgenaud
   \newpage
+
 }
 
 \def\ackpage{
@@ -365,6 +371,7 @@ frame=single,
 }
 
 \def\dedpage{
+\pagestyle{fancy} % Restores all page numbers going forward, beginning at the dedication.
 \chapter*{Dedication}
   \vspace*{\fill}
   \begingroup
@@ -376,7 +383,7 @@ frame=single,
   \newpage
 }
 
-%This is where the main magic happens
+%This is where the main magic happens.
 \renewcommand\maketitle{
   \setcounter{page}{0}
   \pdfbookmark[1]{Titlepage}{titlepage}
