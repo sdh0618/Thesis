@@ -329,9 +329,9 @@ frame=single,
   \begin{center}
   \noindent {\Large \@title} \\
 
-  \vfill
+  % \vfill
   \noindent  \@author \\
-  \vfill
+  % \vfill
 
   (ABSTRACT)
   \end{center}
@@ -346,9 +346,9 @@ frame=single,
   \begin{center}
   \noindent {\Large \@title} \\
 
-  \vfill
+  % \vfill
   \noindent  \@author \\
-  \vfill
+  % \vfill
 
   (GENERAL AUDIENCE ABSTRACT)
   \end{center}
