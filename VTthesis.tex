@@ -90,7 +90,7 @@ Last but not least, I thank my family for their unconditional love and support, 
 
 % The abstract is required.
 \abstract{
-The \textit{Fermi} Large Area Telescope has observed a gamma-ray excess toward the center of the Galaxy at  $\sim$ GeV energies. The spectrum and intensity of the excess are consistent with the annihilation of dark matter with a mass of $\sim$ 100 GeV and a cross section of $\sim 10^{-26}$ cm$^3$ s$^{-1}$. In the meantime, a population of unresolved millisecond pulsars (MSPs) in the Galactic center remains a possible source of the excess. Furthermore, recent analyses have shown that the excess prefers the spatial morphology of the stellar bulge distribution in the Galactic center, supporting a MSP origin. The new discovery makes it imperative to further study the signals from MSPs. 
+The \textit{Fermi} Large Area Telescope has observed a gamma-ray excess toward the center of the Galaxy at  $\sim$ GeV energies. The spectrum and intensity of the excess are consistent with the annihilation of dark matter with a mass of $\sim$ 100 GeV and a velocity-averaged cross section of $\sim 10^{-26}$ cm$^3$ s$^{-1}$. In the meantime, a population of unresolved millisecond pulsars (MSPs) in the Galactic center remains a possible source of the excess. Furthermore, recent analyses have shown that the excess prefers the spatial morphology of the stellar bulge distribution in the Galactic center, supporting a MSP origin. The new discovery makes it imperative to further study the signals from MSPs. 
 \\
 This dissertation studies the gamma-ray emission from Galactic millisecond pulsars to provide new insights into the origin of the Galactic center excess. Using the \textsc{galprop} code, we simulate the propagation of $e^\pm$ injected by the putative MSPs in the Galactic bulge and calculate the inverse Compton (IC) emission caused by the $e^\pm$ losing energy in the interstellar radiation field. We find recognizable features in the spatial maps of the IC. Above TeV energies, the IC morphology tends to follow the distribution of the injected $e^\pm$. Then, we study the Cherenkov Telescope Array (CTA) sensitivity to the IC signal from MSPs. We find that the CTA has the potential to robustly discover the IC signature when the MSP $e^\pm$ injection efficiencies are in the range $\approx$ 2.9-74.1\%. The CTA can also discriminate between an MSP and a dark matter origin for the radiating $e^\pm$ based on their different spatial maps.
 \\
@@ -141,44 +141,150 @@ This dissertation is based on the following papers that I have contributed to:
 \mainmatter
 
 % now go ahead and start writing your thesis
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+\thispagestyle{plain}
+
+This dissertation focuses on the gamma-ray emission from millisecond pulsars in the Milky Way. Gamma rays from millisecond pulsars are important backgrounds for indirect detection of dark matter. To better understand millisecond pulsars, this dissertation studies their gamma-ray signals from different scales and energies.
+
+Chapter~\ref{ch:introduction} introduces the dark matter problem. It includes the evidence for dark matter, the weakly interacting massive particle as a highly motivated dark matter candidate, and the different searching strategies for dark matter.
+
+Chapter~\ref{ch:GCE} reviews the Galactic center excess, one of the most significant and long-standing anomaly for indirect detection of dark matter. We discuss its dark matter and millisecond pulsar interpretations. We show that a population of unresolved millisecond pulsars in the Galactic center remains a promising astrophysical alternative to explain the excess.
+
+Chapter 3--6 are reproduced based on the following papers I have contributed to:
+\begin{itemize}
+    \item Chapter~\ref{ch:IC_MSPs} is based on Paper~\cite{2019PhRvD..99l3020S} \emph{``Inverse Compton emission from millisecond pulsars in the Galactic bulge'', Song, D., Macias, O., and Horiuchi, S., Physical Review D, vol. 99, no. 12, 2019.} We study the inverse Compton emission from the putative millisecond pulsar population responsible for the Galactic center excess. I led the collaboration and wrote the paper. I modified the \textsc{galprop} code to include the $e^\pm$ injection from millisecond pulsars. Using the modified code, I calculated the inverse Compton emission with various injection models and made plots to illustrate the results. All authors are involved in the discussion and interpretation of the results.
+    \item Chapter~\ref{ch:CTA} is based on Paper~\cite{2021MNRAS.506.1741M} \emph{``Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess'', Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021.} We study the Cherenkov Telescope Array sensitivity to the inverse Compton signal from millisecond pulsars in the Galactic center. Oscar Macias led the collaboration. I improved the calculation of the inverse Compton signals using the \textsc{galprop} v56. 
+    % Oscar Macias and Harm van Leijen did the CTA sensitivity estimate based on the improved IC maps. 
+    Oscar and I calculated the predicted $e^\pm$ injection efficiencies. Shin'ichiro Ando and Shunsaku Horiuchi contributed to the interpretation of the results.
+    \item Chapter~\ref{ch:globular_cluster} is based on Paper~\cite{2021MNRAS.507.5161S} \emph{``Evidence for a high-energy tail in the gamma-ray spectra of globular clusters'', Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021.} We find evidence for inverse Compton emission from globular clusters. I led the collaboration and wrote the paper. Oscar Macias and I developed the data analysis pipeline. I did the \textit{Fermi} data analysis for the globular clusters. I built the pipelines for the correlation analysis and spectral analysis. Suggestions from Shunsaku Horichi and Roland M. Crocker largely improved the analyses and led to the final results. David M. Nataf helped the interpretation of the results.
+    \item Chapter~\ref{ch:511keV} is based on Paper~\cite{2022MNRAS.509L..11S} \emph{``Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?'', Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, Monthly Notices of the Royal Astronomical Society: Letters, vol. 509, no. 1, 2021.} We study the morphology of the Galactic 511 keV signal. Thomas Siegert led the collaboration, and performed the INTEGRAL/SPI data analysis. Thomas Siegert and I performed the 3D template blurring. Shunsaku Horiuchi and I performed the supernova kick analysis. Oscar Macias provided astrophysical emission templates and, together with Francesca Calore, contributed to dark matter physics and the connection to the \textit{Fermi}-LAT GeV signal. Fiona H. Panther contributed to positron annihilation physics and cosmic-ray propagation. Roland M. Crocker contributed to the interpretational aspects and crucial inputs to the paper.
+\end{itemize}
+
+\thispagestyle{plain}
+
+% For the rest of this chapter, we introduce the evidence for dark matter, the WIMP model, and the dark matter searching methods. In Chapter~\ref{ch:GCE}, the GCE is reviewed, including its dark matter and millisecond pulsar interpretations. Recent morphological analyses of the GCE related to the stellar bulge distributions are also mentioned. Chapter~\ref{ch:IC_MSPs} calculates the inverse Compton emission from the putative millisecond pulsar population responsible for the GCE, and Chapter~\ref{ch:CTA} studies the Cherenkov Telescope Array sensitivity to such an inverse Compton signal. We present evidence for inverse Compton emission from globular clusters in Chapter~\ref{ch:globular_cluster}. We study the morphology of the Galactic 511 keV signal in Chapter~\ref{ch:511keV}. The dissertation is concluded in Chapter~\ref{ch:summary}.
+
+% Chapter~\ref{ch:IC_MSPs} is based on the following publication of which I am the first author:
+% \begin{itemize}
+%     \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+% \end{itemize}
+
+
+% Chapter~\ref{ch:CTA} is based on the following publication to which I have contributed:
+% \begin{itemize}
+%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
+% \end{itemize}
+% Oscar Macias led the collaboration. I improved the calculation of the IC signals using the \textsc{galprop} v56. Oscar Macias and Harm van Leijen did the CTA sensitivity estimate based on the improved IC maps. Oscar and I calculated the predicted $e^\pm$ injection efficiencies. Shin'ichiro Ando and Shunsaku Horiuchi contributed to the interpretation of the results.
+
+% This chapter is based on the following publication of which I am the first author:
+% \begin{itemize}
+%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
+% \end{itemize}
+% I led the collaboration and wrote the paper. Oscar Macias and I developed the data analysis pipeline. I did the \textit{Fermi} data analysis for the globular clusters. I built the pipelines for the correlation analysis and spectral analysis. Suggestions from Shunsaku Horichi and Roland M. Crocker largely improved the analyses and led to the final results. David M. Nataf helped the interpretation of the results.
+
+% This chapter is based on the following publication to which I have contributed:
+% \begin{itemize}
+%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society: Letters, vol. 509, no. 1, 2021}
+% \end{itemize}
+% Thomas Siegert led the collaboration, and performed the INTEGRAL/SPI data analysis. Thomas Siegert and I performed the 3D template blurring. Shunsaku Horiuchi and I performed the supernova kick analysis. Oscar Macias provided astrophysical emission templates and, together with Francesca Calore, contributed to dark matter physics and the connection to the \textit{Fermi}-LAT GeV signal. Fiona H. Panther contributed to positron annihilation physics and cosmic-ray propagation. Roland M. Crocker contributed to the interpretational aspects and crucial inputs to the paper.
+
+
+
 \chapter{Introduction} \label{ch:introduction}
 
-The second half of the 20th century witnessed immense changes in our view of the Universe. The discovery of dark matter and dark energy meant that the visible world built up by baryon matter only contributes to around 5\% of the total energy density in the Universe. There is overwhelming evidence for the presence of dark matter at different scales, from the rotation curves of galaxies to the large-scale structure of the cosmos. However, the Standard Model (SM) of particle physics, while highly successful and astonishingly accurate in describing the microscopic world, does not include a viable particle candidate for dark matter. {Modification of the gravitational theory has been proposed as an alternative solution to the dark matter problem. Still, it has failed to explain the rich evidence of dark matter from varieties of observations.} As a result, the nature of dark matter remains unknown. 
+The second half of the 20th century witnessed immense changes in our view of the Universe. The discovery of dark matter and dark energy meant that the visible world built up by baryon matter only contributes to around 5\% of the total energy density in the Universe. There is overwhelming evidence for the presence of dark matter at different scales, from the rotation curves of galaxies to the large-scale structure of the cosmos. However, the Standard Model (SM) of particle physics, while highly successful and astonishingly accurate in describing the microscopic world, does not include a viable particle candidate for dark matter. {Modification of the gravitational theory has been proposed as an alternative solution to the dark matter problem. However, it has failed to explain the rich evidence of dark matter from varieties of observations.} As a result, the nature of dark matter remains unknown. 
 
-The weakly interacting massive particle (WIMP) model provides one of the most promising classes of dark matter because they naturally explain the observed relic abundance of dark matter, and many theories provide candidates of WIMPs. Much efforts have been devoted to searching for the WIMPs and studying their properties in the past decades. Three detection methods of dark matter are usually explored: direction detection, collider search, and indirect detection. {In direct detection, dark matter particles can scatter off nuclei in terrestrial detectors, causing observable signals. Dark matter may also be produced in particle colliders when SM particles interact with each other.} The idea for indirect detection is that dark matter particles can self-annihilate or decay into SM particles. The SM particles or their secondary productions may be identified in astronomical observations of the cosmos with good knowledge of the background events. A few exciting anomalies have been claimed in the past decades. In gamma rays, the Galactic center excess (GCE) detected by the \textit{Fermi} Large Area Telescope is significant and long-standing. The excess is consistent with WIMP dark matter annihilation in general. However, an astrophysical origin of the excess is also possible, with an unresolved population of millisecond pulsars being the leading candidate. Better knowledge about the gamma-ray emission from millisecond pulsars is needed before we can successfully claim the (indirect) detection of WIMP dark matter.
+Weakly interacting massive particle (WIMP) models provide a promising class of dark matter models because they naturally explain the observed relic abundance of dark matter, and many theories provide candidates of WIMPs. Much effort has been devoted to searching for the WIMPs and studying their properties in the past decades. Three detection methods of dark matter are usually explored: direction detection, collider search, and indirect detection. {In direct detection, dark matter particles can scatter off nuclei in terrestrial detectors, causing observable signals. Dark matter may also be produced in particle colliders when SM particles interact with each other.} The idea for indirect detection is that dark matter particles can self-annihilate or decay into SM particles. The SM particles or their secondary productions may be identified in astronomical observations of the cosmos with good knowledge of the background events. A few exciting anomalies have been claimed in the past decades. In gamma rays, the Galactic center excess (GCE) detected by the \textit{Fermi} Large Area Telescope is significant and long-standing. The excess is consistent with WIMP dark matter annihilation in general. However, an astrophysical origin of the excess is also possible, with an unresolved population of millisecond pulsars being the leading candidate. Better knowledge about the gamma-ray emission from millisecond pulsars is needed before we can successfully claim the (indirect) detection of WIMP dark matter.
 
-For the rest of this chapter, we introduce the evidence for dark matter, the WIMP model, and the dark matter searching methods. In Chapter~\ref{ch:GCE}, the GCE is reviewed, including its dark matter and millisecond pulsar interpretations. Recent morphological analyses of the GCE related to the stellar bulge distributions are also mentioned. Chapter~\ref{ch:IC_MSPs} calculates the inverse Compton emission from the putative millisecond pulsar population responsible for the GCE, and Chapter~\ref{ch:CTA} studies the Cherenkov Telescope Array sensitivity to such an inverse Compton signal. We present evidence for inverse Compton emission from globular clusters in Chapter~\ref{ch:globular_cluster}. We study the morphology of the Galactic 511 keV signal in Chapter~\ref{ch:511keV}. The dissertation is concluded in Chapter~\ref{ch:summary}.
+{
+In this chapter, we introduce the evidence for dark matter in Sec.~\ref{se:evidence}. Section~\ref{se:wimp} discusses the WIMPs and their production in the early Universe. Section~\ref{se:seaching} reviews three strategies to search for dark matter.
+}
 
-\section{Evidence for dark matter} \label{se:one_section}
+% For the rest of this chapter, we introduce the evidence for dark matter, the WIMP model, and the dark matter searching methods. In Chapter~\ref{ch:GCE}, the GCE is reviewed, including its dark matter and millisecond pulsar interpretations. Recent morphological analyses of the GCE related to the stellar bulge distributions are also mentioned. Chapter~\ref{ch:IC_MSPs} calculates the inverse Compton emission from the putative millisecond pulsar population responsible for the GCE, and Chapter~\ref{ch:CTA} studies the Cherenkov Telescope Array sensitivity to such an inverse Compton signal. We present evidence for inverse Compton emission from globular clusters in Chapter~\ref{ch:globular_cluster}. We study the morphology of the Galactic 511 keV signal in Chapter~\ref{ch:511keV}. The dissertation is concluded in Chapter~\ref{ch:summary}.
 
-Although we have not detected dark matter in its particle form, we are confident about the existence of dark matter from a large number of gravitational evidence on different scales. In this section, we review the most prominent examples of them.
+\section{Evidence for dark matter} \label{se:evidence}
+
+Although we have not detected dark matter in its particle form, we are confident about the existence of dark matter from a large number of gravitational evidence at different scales. In this section, we review the most prominent examples of them.
 
 \subsection{Coma cluster and rotation curves of galaxies} \label{sse:rotation_curve}
 
-The term ``dark matter'' was first used by Fritz Zwicky in his 1933 article~\cite{1933AcHPh...6..110Z}. {He studied the Coma cluster, a nearby galaxy cluster that contains about 1000 galaxies\footnote{By that time, those galaxies were referred as ``nebulae''.}. He found that the velocities of the galaxies were very fast: assuming the Coma cluster is in stationary equilibrium, the average density of the Coma cluster is around 500 times greater than that implied by the luminous matter.} Thus, he concluded that most matter in the Coma cluster should be dark rather than luminous.
+The term ``dark matter'' was first used by Fritz Zwicky in his 1933 article~\cite{1933AcHPh...6..110Z}. He studied the Coma cluster, a nearby galaxy cluster that contains about 1000 galaxies\footnote{By that time, those galaxies were referred to as ``nebulae''.}. {He applied the virial theorem to the motion of the galaxies in the Coma cluster and found that, to keep the cluster stable, the average matter density of the Coma cluster was around 500 times greater than that implied by the luminous matter. Thus, he concluded that most matter in the Coma cluster should be dark rather than luminous.}
+
+{
+The virial theorem connects the total kinetic energy and the gravitational potential energy in a self-gravitating system. For a galaxy $i$ in the galaxy cluster, one has
+\begin{equation}
+    \label{eq:fma}
+    \vec{r}_i\cdot\left(M_i\frac{d^2\vec{r}_i}{dt^2}\right)=\vec{r}_i\cdot\vec{F}_i,
+\end{equation}
+where $\vec{r_i}$ is the position of the galaxy and $M_i$ is the mass of the galaxy. Summing Eq.~\ref{eq:fma} over all galaxies, one obtains
+\begin{equation}
+    \label{eq:vir}
+    \frac{1}{2}\frac{d^2}{dt^2}\left(\sum_i M_i r_i^2\right)= U + 2T,
+\end{equation}
+where
+\begin{equation}
+    T = \frac{1}{2}\sum_i M_i \left(\frac{d\vec{r}_i}{dt}\right)^2
+\end{equation}
+is the total kinetic energy in the galaxy cluster. One can make the following approximation:
+\begin{equation}
+    \sum_i M_i \left(\frac{d\vec{r}_i}{dt}\right)^2 \approx M\langle v\rangle^2,
+\end{equation}
+where $M$ is the total mass of the cluster and $\langle v\rangle$ is the average velocity of the galaxies in the cluster. The gravitational potential energy of the cluster is given by
+\begin{equation}
+    U = \sum_i\vec{r}_i\cdot\vec{F}_i = -\sum_i\sum_{i\neq j}G_N\frac{M_iM_j}{r_{ij}},
+\end{equation}
+where $G_N$ is the gravitational constant and $r_{ij}$ is equal to $|\vec{r}_j - \vec{r}_i|$. Assuming that the cluster is spherically symmetric and the mass distribution of the cluster is uniform, one obtains
+\begin{equation}
+    U = -G_N\frac{3M^2}{5R^2},
+\end{equation}
+where $R$ is the radius of the cluster.
+When the galaxy is stationary, the left hand side of Eq.~\ref{eq:vir} vanishes. The total mass $M$ of the cluster is connected to its radius $R$ and the average velocity $\langle v\rangle$ by
+\begin{equation}
+    M \approx \frac{5R\langle v\rangle^2}{3G_N}.
+\end{equation}
+In Zwicky's original paper~\cite{1933AcHPh...6..110Z}, he estimated that the Coma cluster contained about 800 galaxies with a mass of each around $10^9$ solar masses ($M_\odot$)\footnote{One solar mass is around $2\times 10^{30}$ kg.}. Therefore, the total mass of the Coma cluster would be around $8\times 10^{11} M_\odot$. The radius of the Coma cluster was estimated to be one million light-years ($\sim 10^{24}$ cm). By applying the virial theorem, the expected average velocity was $\langle v\rangle \approx 80$ km s$^{-1}$. However, the observed $\langle v\rangle$ based on the Doppler effect was greater than $1000$ km s$^{-1}$. Therefore, he concluded that the average mass density of the Coma cluster had to be hundreds times greater than that implied by the luminous matter.
+}
+% He found that the velocities of the galaxies were very fast: assuming the Coma cluster is in stationary equilibrium, the average density of the Coma cluster is around 500 times greater than that implied by the luminous matter. Thus, he concluded that most matter in the Coma cluster should be dark rather than luminous.
 
 %By studying the orbit velocity of galaxies in the outer region of the Coma cluster, he found that the implied mass-to-light ratio of the galaxy cluster is around 500. 
 
-The rotation curves of the Andromeda galaxy (M31) were studied by Horace Babcock~\cite{1939LicOB..19....1B} in 1939 and van de Hulst et al.~\cite{1957BAN....14....1V} in 1957. Both works found high values of circular velocity at large radii of M31, but the results were not widely recognized due to the limited data quality. The revolutionary discovery was made by Vera Rubin and Kent Ford in 1970~\cite{1970ApJ...159..379R}. Their high-quality measurement of the rotation curves provided convincing evidence that there was missing matter in M31. Flat rotation curves are confirmed by following observations in many galaxies and has been considered one of the most compelling pieces of evidence for dark matter. {{Modified gravity~\cite{1983ApJ...270..365M} can also explain the observed rotation curves. However, it is very difficult for modified gravity to explain all the evidence of dark matter from different observations, as we shall see in the following sections.}}
+The rotation curve of a spiral galaxy is the relation between the orbit velocities of the stars and their radial distances from the galactic center. The rotation curve of the Andromeda Galaxy (M31) was studied by Horace Babcock~\cite{1939LicOB..19....1B} in 1939 and van de Hulst et al.~\cite{1957BAN....14....1V} in 1957. Both works found high values of circular velocity at large radii of M31, but the results were not widely recognized due to the limited data quality. The revolutionary discovery was made by Vera Rubin and Kent Ford in 1970~\cite{1970ApJ...159..379R}. Their high-quality measurement of the rotation curve provided convincing evidence that there was missing matter in M31. Flat rotation curves have been confirmed in subsequent observations on many spiral galaxies and have been considered one of the most compelling pieces of evidence for dark matter. {{Modified gravity~\cite{1983ApJ...270..365M} can also explain the observed rotation curves. However, it is very difficult for modified gravity to explain all the evidence of dark matter from different observations, as we shall see in the following sections.}}
 
-From the Newtonian dynamics, the orbit velocities of stars or gas in a galaxy are given by
+{To illustrate the meaning of the flat rotation curves, we assume that galaxies are cylindrically symmetric and  orbits of stars or gas are nearly circular.} From the Newtonian dynamics, the circular velocities of stars or gas 
+%in a galaxy 
+are given by
 \begin{equation}
     v(r) = \sqrt{\frac{G_N M(r)}{r}},
 \end{equation}
-where $r$ is the radius of the orbit, $G_N$ is the gravitational constant, and $M(r)$ is the amount of mass enclosed in the radius $r$. In a simple model, assuming a homogeneous and spherically symmetric distribution of mass in the galaxy, $M(r) = (4\pi/3)\rho r^3$. Therefore,
+where $r$ is the radius of the orbit, $G_N$ is the gravitational constant, and $M(r)$ is the amount of mass enclosed in the radius $r$. In a simple model, assuming a homogeneous and spherically symmetric distribution of mass in the galaxy, $M(r) = (4\pi/3)\rho r^3$. Therefore, one obtains
 \begin{equation}
     v(r) = \sqrt{\frac{4\pi G_N \rho}{3}}r.
 \end{equation}
-The rotation curve is linear to the radius $r$, until the entire galaxy is enclosed. After that,
+The rotation curve is linear in the radius $r$, until the entire galaxy is enclosed. After that, one obtains
 \begin{equation}
     v(r) = \sqrt{\frac{G_N M}{r}}.
 \end{equation}
-The rotation curve falls off as $1/\sqrt{r}$ at large radii beyond the distribution of visible matter. However, flat rotation curves imply that the halo mass within the radius $r$ is linear to $r$. Therefore, the needed dark matter halo density profile has
+The rotation curve falls off as $1/\sqrt{r}$ at large radii beyond the distribution of visible matter. However, flat rotation curves imply that the mass enclosed within the radius $r$ should continue to increase linearly in $r$
+beyond the boundary of the visible galaxy.
+%the halo mass within the radius $r$ is linear to $r$. 
+Therefore, the needed dark matter halo density profile has the following form:
 \begin{equation}
     \rho(r) \sim \frac{1}{r^2}.
 \end{equation}
 
-Figure~\ref{fig:rotation_curves} shows the rotation curve of NGC 6503, {a dwarf spiral galaxy around ~6 Mpc away from the Milky Way}~\cite{1991MNRAS.249..523B}. The visible mass component (disk and gas) cannot explain the flat rotation curve at large radii. A dominant dark matter halo is needed.
+As an example, Fig.~\ref{fig:rotation_curves} shows the rotation curve of NGC 6503, {a dwarf spiral galaxy around ~6 Mpc away from the Milky Way}~\cite{1991MNRAS.249..523B}. The visible mass component (disk and gas) cannot explain the flat rotation curve at large radii. A dominant dark matter halo is needed.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/Intro/rotation_curves.eps}
@@ -188,9 +294,13 @@ Figure~\ref{fig:rotation_curves} shows the rotation curve of NGC 6503, {a dwarf 
 
 \subsection{Gravitational lensing and the Bullet Cluster}
 
-Gravitational field bends the trajectory of light, according to general relativity. In the Universe, the inhomogeneous gravitation field will bend the lights from distant objects such as galaxies during their propagation to the Earth. The images of the distant galaxies observed by us will therefore be distorted. This effect is called gravitational lensing. Weak gravitational lensing of distant galaxies by foreground structures has provided a direct measure of the matter distribution in the Universe~\cite{2002NewAR..46..767H}. Based on weak lensing measurements,  the Sloan Digital Sky Survey finds that dark matter is required to explain the masses and sizes of many galaxies~\cite{2006ApJS..162...38A}.
+The gravitational field bends the trajectory of light, according to general relativity. In the Universe, inhomogeneous gravitational fields will bend the light from distant objects such as galaxies, during their propagation to the Earth. This effect is called gravitational lensing.
+{There are two types of gravitational lensing: strong lensing, where multiple images of the same background source are produced; and weak lensing, where images of the distant sources are distorted. Both strong lensing and weak lensing have provided evidence for dark matter in galaxies. Dark matter substructures with masses of $\sim 10^8 M_\odot$ can cause strong gravitational lensing, which has been confirmed by observations of multiply-imaged quasi-stellar objects~\cite{2003MNRAS.339..607M,2004ApJ...607...43M}.}
+% The images of the distant galaxies observed by us will therefore be distorted.
+Weak gravitational lensing of distant galaxies by foreground structures has provided a direct measure of the matter distribution in the Universe~\cite{2002NewAR..46..767H}. Based on weak lensing measurements,  the Sloan Digital Sky Survey {analyses a population of nearly a third of a million galaxies and reveals that galaxies with stellar masses of $6\times 10^{10} M_\odot$ typically have halos of total mass $1.4\times 10^{12} M_\odot$~\cite{2006ApJS..162...38A}}. 
+%dark matter is required to explain the masses and sizes of many galaxies.
 
-Another direct proof of the existence of dark matter comes from weak lensing observations of the ``Bullet Cluster''~\cite{2006ApJ...648L.109C}. The Bullet Cluster, or 1E 0657-558, shows the merging of two clusters at $z=0.296$. Figure~\ref{fig:bullet} shows the X-ray image of the cluster that traces the gas component of the cluster. However, the week lensing map that traces the gravitational potential does not overlap with the X-ray image. Therefore, the dominant mass of the cluster is non-baryonic. Thus, the Bullet Cluster provides direct proof of dark matter {and best evidence against models of modified gravity since they predict overlaps between the gravitational potential and the matter distribution in galaxies.}
+Another direct proof of the existence of dark matter comes from weak lensing observations of the ``Bullet Cluster''~\cite{2006ApJ...648L.109C}. The Bullet Cluster, or 1E 0657-558, shows the merging of two galaxy clusters at $z=0.296$. Figure~\ref{fig:bullet} shows the X-ray image of the cluster that traces the gas component of the cluster. However, the week lensing map that traces the gravitational potential does not overlap with the X-ray image. Therefore, the dominant mass of the cluster is non-baryonic. Thus, the Bullet Cluster provides direct proof of dark matter {and best evidence against models of modified gravity since they predict overlaps between the gravitational potential and the matter distribution in galaxies.}
 
 \begin{figure}[htb]
     \centering
@@ -203,24 +313,24 @@ Another direct proof of the existence of dark matter comes from weak lensing obs
 
 The Cosmological Microwave Background (CMB) is the remnant radiation from the epoch of the ``recombination'' of electrons and protons, which happened at redshift $z = 1100$~\cite{2003moco.book.....D}. The measured CMB is a black body radiation with an average temperature $T = 2.725$K. It is extremely uniform across the sky, with temperature fluctuations at the level of $10^{-5}$~\cite{2002ARA&A..40..171H}. 
 
-The power spectrum of the CMB anisotropies is a powerful probe of cosmological parameters. It is common to expand the temperature fluctuations of the CMB in spherical harmonics,
+The power spectrum of the CMB anisotropies is a powerful probe of cosmological parameters. It is common to expand the temperature fluctuations of the CMB in spherical harmonics, in the following form:
 \begin{equation}
     \Theta(\hat{\bm n}) = \frac{\delta T}{T}(\hat{\bm n}) = \sum^{l=\infty}_{l=0}\sum^{m=l}_{m=-l} \Theta_{lm}Y_{lm}(\hat{\bm n}).
 \end{equation}
-The power spectrum $C_l$ describes the ensemble average of the fluctuations,
+The power spectrum $C_l$ that describes the ensemble average of the fluctuations is given by
 \begin{equation}
     \delta_{ll'}\delta_{mm'}C_l = \langle\Theta_{lm}\Theta^*_{l'm'}\rangle,
 \end{equation}
-which is often plotted in the scale-invariant way,
+which is often plotted in the scale-invariant way:
 \begin{equation}
     D_l = \frac{l(l+1)}{2\pi}C_l.
 \end{equation}
 
-Figure~\ref{fig:cmb} shows the CMB power spectrum $D_l$ as a function of the multipoles $l$, measured by the European Space Agency's \emph{Planck} satellite~\cite{2020A&A...641A...6P}. The relative height of the peaks in the CMB power spectrum has information such as the curvature, the matter fraction, and the dark matter fraction of the Universe. The best-fit cosmological model of \textit{Planck} reads {the matter density parameter,
+Figure~\ref{fig:cmb} shows the CMB power spectrum $D_l$ as a function of the multipoles $l$, measured by the European Space Agency's \emph{Planck} satellite~\cite{2020A&A...641A...6P}. The relative height of the peaks in the CMB power spectrum has information such as the curvature, the matter fraction, and the dark matter fraction of the Universe. The best-fit cosmological model of \textit{Planck} shows that {the matter density parameter has the following value:
 \begin{equation}
     \Omega_m = \frac{\rho_m}{\rho_c} = 0.3153 \pm 0.0073.
 \end{equation}
-Here, $\rho_m$ is the average matter density in the Universe, $\rho_c$ is the critical density assuming a spatially flat Universe. Similarly, the dark matter density parameter $\Omega_\mathrm{DM} = 0.2659 \pm 0.0062$. The remaining energy budget of the Universe is filled by the dark energy ($\Omega_\Lambda = 0.6847 \pm 0.0073$).} Therefore, more than 80\% of the matter in the Universe is in the form of dark matter. The CMB measurement provides the most precise estimate of the dark matter component in the Universe.
+Here, $\rho_m$ is the average matter density in the Universe, $\rho_c$ is the critical density assuming a spatially flat Universe. Similarly, the dark matter density parameter is $\Omega_\mathrm{DM} = 0.2659 \pm 0.0062$. The remaining energy budget of the Universe is filled by the dark energy ($\Omega_\Lambda = 0.6847 \pm 0.0073$).} Therefore, more than 80\% of the matter in the Universe is in the form of dark matter. The CMB measurement provides the most precise estimate of the dark matter component in the Universe.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/Intro/Planck_CMB.pdf}
@@ -230,35 +340,114 @@ Here, $\rho_m$ is the average matter density in the Universe, $\rho_c$ is the cr
 
 \section{The WIMP model}\label{se:wimp}
 
-The CMB observation means that dark matter is not made out of missing baryon matter. In the meantime, the SM cannot provide any viable dark matter candidate. A new type of particles beyond the SM is needed.  Many candidates have been proposed to solve the dark matter problem~\cite{2005PhR...405..279B}. Among them, the WIMP model is one of the highly motivated models. \citet{1979ARNPS..29..313S} shows that a new particle with a weak scale mass and interaction cross section can naturally generate the current average energy density of dark matter in the Universe. This section reviews the scenario, which is often called the ``freeze-out'' of WIMP dark matter.
+The CMB observation means that dark matter is not made out of missing baryon matter. In the meantime, the SM cannot provide any viable dark matter candidate. A new type of particles beyond the SM is needed.  Many candidates have been proposed to solve the dark matter problem~\cite{2005PhR...405..279B}. Among them, the WIMP model is one of the most motivated models. \citet{1979ARNPS..29..313S} shows that a new particle with a weak scale mass and interaction cross section can naturally generate the current average energy density of dark matter in the Universe. This section reviews the scenario, which is often called the ``freeze-out'' of WIMP dark matter.
 
-The Boltzmann equation for the number density of the dark matter particles in the early Universe is given by
-\begin{equation}
-    \frac{dn_\chi}{dt} + 3Hn_\chi = \langle\sigma v\rangle(n_\chi^{\mathrm{eq}} - n_\chi).
-\end{equation}
-Here $\langle\sigma v\rangle$ is the thermal-average annihilation cross section of dark matter. {The Hubble rate,
-\begin{equation}
-    H^2 = \left(\frac{\dot{a}}{{a}}\right)^2 = \frac{8\pi G_N \rho}{3}.
-\end{equation}
-Here, $a$ is the cosmic scale factor and the dot represents a time derivative. When the Universe is radiation-dominated, the energy density $\rho$ at the temperature $T$ is given by,
-\begin{equation}
-    \rho = \frac{\pi}{30}g_*(T)T^4,
-\end{equation}
-where $g_*(T)$ is the effective number of relativistic degrees of freedom.} At very high temperature ($T>$ TeV), all SM particles are relativistic. The $g_*$ counts the degree of freedom of all SM particles and $g_* = 106.75$. The $g_*$ decreases with temperatures as heavy particles gradually become non-relativistic.
+\subsection{{Cosmology}}
 
+The dynamics of the Universe is determined by the Einstein equation, which is given by
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = -\frac{8\pi G_N}{c^4}T_{\mu\nu} + \Lambda g_{\mu\nu},
+\end{equation}
+where $R_{\mu\nu}$ and $R$ are the Ricci tensor and scalar, respectively. $g_{\mu\nu}$ is the metric tensor, $T_{\mu\nu}$ is the energy-momentum tensor, and $\Lambda$ is the cosmological constant that is related to the dark energy in the Universe. The Einstein equation tells us that the geometry of the Universe (left-hand side) is determined by the matter and energy content in the Universe (right-hand side).
+
+The metric tensor $g_{\mu\nu}$ determines the invariant line element $ds^2$:
+\begin{equation}
+    ds^2 = \sum_{\mu,\nu=0}^{3}g_{\mu\nu}dX^{\mu}dX^{\nu}.
+\end{equation}
+$X^\mu = \{t, x^i\}$ is the spacetime coordinates where $t$ denotes the time coordinate and $x^i$'s denote the spatial coordinates with $i = 1, 2, 3$. At large scales, the Universe is isotropic and homogeneous. One obtains the Friedmann-Robertson-Walker (FRW) metric:
+\begin{equation}
+    ds^2 = dt^2 - a^2(t)\left[\frac{dr^2}{1-kr^2}+r^2d\Omega^2\right].
+\end{equation}
+The constant $k$ that describes the curvature of the Universe has three options: $-1$ for hyperbolic space, 0 for flat space, and $+1$ for spherical space. $a(t)$ is called the scale factor, which models the expansion of the Universe.
+
+Applying the FRW metric to the Einstein equation leads to the Friedmann equation:
+\begin{equation}
+    H^2 + \frac{k}{a^2} = \frac{8\pi G_N}{3}\rho_\mathrm{tot}.
+\end{equation}
+Here, $\rho_\mathrm{tot}$ represents the total energy density in the Universe. The Hubble rate $H$ is defined as
+\begin{equation}
+    H^2 = \left(\frac{\dot{a}}{{a}}\right)^2,
+\end{equation}
+where the dot represents a time derivative. The Friedmann equation relates the expansion rate of the Universe to the curvature and the energy density of the Universe.
+
+\subsection{{Relic density}}
+
+The early Universe is in a hot and dense state. SM particles in the early Universe are in thermal equilibrium when their interaction rates are much greater than the expansion rate of the Universe. The number of particles per unit volume in the phase space is given by the distribution function of the following form:
+\begin{equation}
+    f(E) = \frac{1}{e^{E/T}\pm 1},
+\end{equation}
+where $E$ is the energy of the particle, and $T$ is the temperature of the Universe. The $+$ sign in the distribution function is for fermions and the $-$ sign for bosons.
+
+Integrating the distribution function over the momentum, one obtains the number density $n$ of the particle:
+\begin{equation}
+    n = \frac{g}{(2\pi)^3}\int d^3p f(p)=\frac{\zeta(3)}{\pi^2}gT^3\left\{
+                \begin{array}{ll}
+                  1 & \mathrm{Bosons}\\
+                  \frac{3}{4} & \mathrm{Fermions}
+                \end{array}
+              \right.,
+\end{equation}
+where $g$ is the internal degree of freedom of the particle. Similarly, the energy density $\rho$ and the pressure $P$ of the particle are given by
+\begin{equation}
+    \rho = \frac{g}{(2\pi)^3}\int d^3p f(p)E(p)=\frac{\pi^2}{30}gT^4\left\{
+                \begin{array}{ll}
+                  1 & \mathrm{Bosons}\\
+                  \frac{7}{8} & \mathrm{Fermions}
+                \end{array}
+              \right.
+\end{equation}
+and
+\begin{equation}
+    P = \frac{g}{(2\pi)^3}\int d^3p f(p)\frac{p^2}{3E(p)}=\frac{\pi^2}{90}gT^4\left\{
+                \begin{array}{ll}
+                  1 & \mathrm{Bosons}\\
+                  \frac{7}{8} & \mathrm{Fermions}
+                \end{array}
+              \right..
+\end{equation}
+The total radiation energy density $\rho_r$ at the temperature $T$ is given by
+\begin{equation}
+    \rho_r = \frac{\pi^2}{30}g_*(T)T^4,
+\end{equation}
+where $g_*(T)$ is the effective number of relativistic degrees of freedom. When the temperature $T$ of the Universe is above around 100 GeV, all SM particles are in thermal equilibrium. The $g_*$ counts the degree of freedom of all SM particles and $g_* = 106.75$~\cite{2016Galax...4...78H}. The $g_*$ decreases with temperatures as heavy particles gradually become non-relativistic and decouple from thermal equilibrium. During the radiation-dominated
+era, the Hubble rate $H$ (for a flat universe with $k=0$) is given by
+\begin{equation}
+    H = \sqrt{\frac{8\pi G_N \rho_r}{3}} \approx 1.66\sqrt{g_*(T)}\frac{T^2}{M_\mathrm{pl}},
+\end{equation}
+where $M_{pl} \approx 1.22\times 10^{19}$ GeV is the Planck mass.
+
+It is also convenient to define the entropy density $s$ of the particle:
+\begin{equation}
+    s = \frac{\rho + P}{T} = \frac{2\pi^2}{45}gT^3.
+\end{equation}
+The total entropy density in the thermal equilibrium is
+\begin{equation}
+    s(T) = \frac{2\pi^2}{45}g_{*,S}(T)T^3,
+\end{equation}
+where $g_{*,S}(T)$ is the effective number of degrees of freedom in the entropy. The entropy density is a very useful quantity since the comoving entropy $s(T)a(T)^3$ is a conserved quantity. Therefore, one can relate the scale factors at two different temperatures $T_i$ and $T_f$ to the entropy densities:
+\begin{equation}
+    \frac{s(T_i)}{s(T_f)} = \left[\frac{a(T_f)}{a(T_i)}\right]^3.
+\end{equation}
+%properly scales the relic abundance.
+
+WIMP dark matter in the early Universe can interact with the SM particles and stay in thermal equilibrium by e.g., annihilation. The evolution of the number density $n_\chi$ of the dark matter particle in the early Universe is governed by the Boltzmann equation:
+\begin{equation}
+    \frac{dn_\chi}{dt} + 3Hn_\chi = - \langle\sigma v\rangle n_\chi^2 + \langle\sigma v\rangle(n_\chi^{\mathrm{eq}})^2.
+\end{equation}
+Here, $\langle\sigma v\rangle$ is the velocity-average annihilation cross section of dark matter, and
 % $H = 1.66\sqrt{g_*(T)}/M_{pl}$, where $M_{pl} \approx 1.22\times 10^{19}$ GeV is the Planck mass. The effective number of degree of freedom,
 % \begin{equation}
 %     g_*(T) = \sum_{i=b}g_i\left(\frac{T_i}{T}\right)^4 + \sum_{i=f}\frac{7}{8}g_i\left(\frac{T_i}{T}\right)^4
 % \end{equation}
 % counts the relativistic degree of freedom at the temperature $T$. Here $g_i$'s are the internal degrees of freedom of the particle species,  and $T_i$'s are the temperatures of the decoupled particles.
-
-On the right hand side of the Boltzmann equation, we need the first term for the production of dark matter from SM particles, and the second term for the dark matter annihilation. $n_\chi^{\mathrm{eq}}$ is the number density at thermal equilibrium. For massive particles in the Maxwell-Boltzmann approximation,
+$n_\chi^{\mathrm{eq}}$ is the number density at thermal equilibrium. For massive particles in the Maxwell-Boltzmann approximation, the number density in equilibrium is given by
 \begin{equation}
     n_\chi^{\mathrm{eq}} = g\left( \frac{m_\chi T}{2\pi} \right)^{3/2}\exp(-m_\chi/T),
 \end{equation}
-{where $g$ is the internal degree of freedom of dark matter particles and $m_\chi$ is the dark matter mass.}
+where $g$ is the internal degree of freedom of dark matter particles and $m_\chi$ is the dark matter mass. On the right hand side of the Boltzmann equation, the first term is for the annihilation of dark matter and the second term is for the production of dark matter from SM particles which is equal to the annihilation of dark matter particles that are in equilibrium.
+%we need the first term for the production of dark matter from SM particles, and the second term for the dark matter annihilation.
 
-There are two limits of the Boltzmann equation. At high temperatures $T \gg m_\chi$, dark matter is in equilibrium, $n_\chi = n_\chi^{\mathrm{eq}}$. In the other limit $T \ll m_\chi$, $n_\chi^{\mathrm{eq}}$ is suppressed by the exponential term, $\exp(-m_\chi/T)$. The production of dark matter $\langle\sigma v\rangle n_\chi^{\mathrm{eq}}$ is negligible. Thus, the number density of dark matter $n_\chi$ drains rapidly because of the Hubble expansion and the annihilation. The freeze-out of dark matter happens when the annihilation is comparable to the expansion rate of the Universe,
+There are two limits of the Boltzmann equation. At high temperatures $T \gg m_\chi$, dark matter is in equilibrium, $n_\chi = n_\chi^{\mathrm{eq}}$. In the other limit $T \ll m_\chi$, $n_\chi^{\mathrm{eq}}$ is suppressed by the exponential term, $\exp(-m_\chi/T)$. The production of dark matter $\langle\sigma v\rangle n_\chi^{\mathrm{eq}}$ is negligible. Thus, the number density of dark matter $n_\chi$ drains rapidly because of the Hubble expansion and the annihilation. The freeze-out of dark matter happens when the annihilation is comparable to the expansion rate of the Universe:
 \begin{equation}
     \langle\sigma v\rangle n_\chi \sim H.
 \end{equation}
@@ -267,28 +456,28 @@ The number density of dark matter at the freeze-out temperature $T_f$ is therefo
 \begin{equation}
     \left.n_\chi\right|_{T = T_f} \approx \left.\frac{H}{\langle\sigma v\rangle}\right|_{T = T_f} \approx \frac{1.66\sqrt{g_*(T_f)}T_f^2}{\langle\sigma v\rangle M_{pl}},
 \end{equation}
-where $M_{pl} \approx 1.22\times 10^{19}$ GeV is the Planck mass.
+%where $M_{pl} \approx 1.22\times 10^{19}$ GeV is the Planck mass.
 The relic abundance of dark matter today ($T=T_\mathrm{CMB}$) is
 \begin{equation}
     \Omega_\mathrm{DM} = \frac{\rho_\mathrm{DM}}{\rho_c} = \frac{\left. m_\chi n_\chi\right|_{T = T_f}}{\rho_c}\frac{s(T_\mathrm{CMB})}{s(T_f)}.
 \end{equation}
-The entropy density
-% \footnote{The effective number of degrees of freedom in entropy $g_{*,S}(T)$ is different from the $g_{*}(T)$ as
-% \begin{equation*}
-%     g_{*,S}(T) = \sum_{i=b}g_i\left(\frac{T_i}{T}\right)^3 + \sum_{i=f}\frac{7}{8}g_i\left(\frac{T_i}{T}\right)^3.
-% \end{equation*}
-% }
-$s(T) = (2\pi/45)g_{*,S}(T)T^3$ {where $g_{*,S}(T)$ is the effective number of degrees of freedom in the entropy. The comoving entropy $s(T)a(T)^3$ is a conserved quantity. Therefore,
-\begin{equation}
-    \frac{s(T_\mathrm{CMB})}{s(T_f)} = \left[\frac{a(T_f)}{a(T_\mathrm{CMB})}\right]^3
-\end{equation}
-properly scales the relic abundance.}
+% The entropy density
+% % \footnote{The effective number of degrees of freedom in entropy $g_{*,S}(T)$ is different from the $g_{*}(T)$ as
+% % \begin{equation*}
+% %     g_{*,S}(T) = \sum_{i=b}g_i\left(\frac{T_i}{T}\right)^3 + \sum_{i=f}\frac{7}{8}g_i\left(\frac{T_i}{T}\right)^3.
+% % \end{equation*}
+% % }
+% $s(T) = (2\pi/45)g_{*,S}(T)T^3$ {where $g_{*,S}(T)$ is the effective number of degrees of freedom in the entropy. The comoving entropy $s(T)a(T)^3$ is a conserved quantity. Therefore, one obtains
+% \begin{equation}
+%     \frac{s(T_\mathrm{CMB})}{s(T_f)} = \left[\frac{a(T_f)}{a(T_\mathrm{CMB})}\right]^3
+% \end{equation}
+% properly scales the relic abundance.}
 
-For dark matter with a weak scale mass, the freeze-out temperature $T_f \sim m_\chi/25$. One can estimate the relic abundance of dark matter,
+For dark matter with a weak scale mass, the freeze-out temperature is $T_f \sim m_\chi/25$. One can estimate the relic abundance of dark matter, which is given by
 \begin{equation}
     \Omega_\mathrm{DM} \approx 0.26 \left( \frac{m_X}{100\ \mathrm{GeV}} \right) \left( \frac{2.2\times 10^{-26}\ \mathrm{cm}^3\ \mathrm{s}^{-1}}{\langle\sigma v\rangle} \right).
 \end{equation}
-In the estimate, we use $g_{*,S}(T_\mathrm{CMB}) \approx 3.909$ and $g_{*,S}(T_f) = g_{*}(T_f) \approx 86.25$~\cite{2016Galax...4...78H}. The value $\langle\sigma v\rangle = 2.2\times 10^{-26}\ \mathrm{cm}^3\ \mathrm{s}^{-1}$ is the minimum cross section to avoid an overabundance of dark matter, and is a often-used benchmark for dark matter indirect detection. {Figure~\ref{fig:freeze-out} illustrates the freeze-out of dark matter for different $\sigmav$'s.}
+In the estimate, we use $g_{*,S}(T_\mathrm{CMB}) \approx 3.909$ and $g_{*,S}(T_f) = g_{*}(T_f) \approx 86.25$~\cite{2016Galax...4...78H}. The value $\langle\sigma v\rangle = 2.2\times 10^{-26}\ \mathrm{cm}^3\ \mathrm{s}^{-1}$ is the minimum cross section to avoid an overabundance of dark matter, and is an often-used benchmark for dark matter indirect detection. {Figure~\ref{fig:freeze-out} illustrates the freeze-out of dark matter for different $\sigmav$'s.}
 
 \begin{figure}[htb]
     \centering
@@ -297,11 +486,11 @@ In the estimate, we use $g_{*,S}(T_\mathrm{CMB}) \approx 3.909$ and $g_{*,S}(T_f
     \label{fig:freeze-out}
 \end{figure}
 
-The WIMP model is especially favored because many particle theories naturally provide candidates for the weak scale particle that can explain the dark matter relic abundance. For example, the lightest \textit{neutralino} in the supersymmetric theory, or the Kaluza-Klein states in models of extra dimensions, are all motivated by particle physics problems~\cite{2005PhR...405..279B}. The fact that cosmology implies them as viable dark matter candidates is called the ``WIMP miracle''. Although many assumptions are made for the ``miracle'' to work~\cite{2019arXiv190407915L}, this remarkable coincidence between particle physics and cosmology still motivate the weak scale as a very promising scale for new physics, and much efforts have been devoted to the search of WIMPs.
+The WIMP model is especially favored because many particle theories naturally provide candidates for the weak scale particle that can explain the dark matter relic abundance. For example, the lightest \textit{neutralino} in the supersymmetric theory, or the Kaluza-Klein states in models of extra dimensions, are all motivated by particle physics problems~\cite{2005PhR...405..279B}. The fact that cosmology implies that they are viable dark matter candidates is called the ``WIMP miracle''. Although many assumptions are made for the ``miracle'' to work~\cite{2019arXiv190407915L}, this remarkable coincidence between particle physics and cosmology still motivate the weak scale as a very promising scale for new physics, and much effort has been devoted to the search of WIMPs.
 
-\section{Searching for dark matter}
+\section{Searching for dark matter}\label{se:seaching}
 
-A pedagogical Feynman diagram is often used (Fig.~\ref{fig:dm_search}, from~\citet{2019FrP.....7...75G}) to illustrate three dark matter detection channels: direct detection, collider production, and indirect detection. We review them in this section.
+A pedagogical Feynman diagram is often used (Fig.~\ref{fig:dm_search}, from~\citet{2019FrP.....7...75G}) to illustrate the three dark matter detection channels: direct detection, collider production, and indirect detection. We review them in this section.
 
 \begin{figure}[htb]
     \centering
@@ -320,17 +509,17 @@ The differential rate for dark matter-nuclei scattering is
 \end{equation}
 where $N_N$ is the atomic number of the nuclei, $\rho_0$ is the dark matter density at the location of the Earth, $f(\bm{v})$ is the local dark matter velocity distribution function, and $d\sigma/dE_R$ is differential cross section for dark matter-nuclei scattering.
 
-The local dark matter density and velocity distribution are needed as inputs to infer the dark matter-nuclei scattering cross section. However, those values depend on the astrophysical measurement and have uncertainties. The local dark matter density can vary from 0.2 to 0.4 GeV cm$^{-3}$~\cite{2010A&A...509A..25W}. In the so-called standard halo model that assumes smooth phase-space distribution of dark matter, the velocity distribution function is Maxwellian,
+The local dark matter density and velocity distribution are needed as inputs to infer the dark matter-nuclei scattering cross section. However, those values depend on astrophysical measurements and have uncertainties. The local dark matter density can vary from 0.2 to 0.4 GeV cm$^{-3}$~\cite{2010A&A...509A..25W}. In the so-called standard halo model that assumes smooth phase-space distribution of dark matter, the velocity distribution function is Maxwellian:
 \begin{equation}
     f(v) = \frac{1}{\sqrt{2\pi \sigma_c}}\exp\left(-\frac{v^2}{2\sigma_c^2}\right)
 \end{equation}
 where $\sigma_c \approx 270$ km s$^{-1}$~\cite{2012PDU.....1...94B}. However, the standard halo model has been challenged {by numerical simulations~\cite{2013ApJ...764...35M} and }by the Gaia observation: the more realistic dark matter velocity distribution is affected by dark matter substructures near the Solar neighborhood~\cite{2019ApJ...874....3N}. 
 
-Noble liquid detectors in underground laboratories are standard detector designs for direct detection for low background and large target mass~\cite{2012PDU.....1...94B}. Current experiments like the XENON1T~\cite{2019PhRvL.122g1301A} have been operating with target nuclei mass at the level of hundreds of kilograms and are probing deeply in the parameter space of dark matter-nucleus interaction.
+Noble liquid detectors in underground laboratories are standard detector designs for direct detection for low background and large target mass~\cite{2012PDU.....1...94B}. Current experiments like the XENON1T~\cite{2019PhRvL.122g1301A} have been operating with target nuclei mass at the level of hundreds of kilograms and are probing deeply into the parameter space of dark matter-nucleus interaction.
 
 \subsection{Collider search}
 
-Dark matter particles may be produced at high-energy particle colliders such as the Large Hadron Collider~\cite{2013IJMPA..2830052M}. Dark matter would be invisible to the detectors at the collider, but its production can be identified by looking at the SM particles associated with dark matter. Conservation of energy and momentum can be applied to construct the missing energy and momentum of dark matter. Unlike direct detection, the collider search of dark matter is independent of the local dark matter density and velocity distribution, to which astrophysical uncertainties apply. {On the other hand, collider search will only be able to reveal new particles beyond the SM. Their identities as dark matter need to be confirmed with direct detection and cosmological observations.}
+Dark matter particles may be produced at high-energy particle colliders such as the Large Hadron Collider~\cite{2013IJMPA..2830052M}. Dark matter would be invisible to the detectors at the collider, but its production can be identified by looking at the SM particles associated with dark matter. Conservation of energy and momentum can be applied to the visible SM particles to detect missing energy and momentum, which would be indicative of dark matter. Unlike direct detection, the collider search of dark matter is independent of the local dark matter density and velocity distribution, to which astrophysical uncertainties apply. {On the other hand, collider search will only be able to reveal new particles beyond the SM. Their identities as dark matter need to be confirmed with direct detection and cosmological observations.}
 
 \subsection{Indirect detection}\label{sse:indirect}
 
@@ -338,16 +527,16 @@ In indirect detection, dark matter particles will annihilate or decay into SM pa
 
 Possible indirect signals of dark matter include gamma rays, cosmic rays, and neutrinos. There are different types of experiments to probe them:
 \begin{itemize}
-    \item \emph{Gamma rays.} The International Gamma-Ray Astrophysics Laboratory (INTEGRAL) is a space-based gamma-ray telescope. The spectrometer on INTEGRAL (SPI) has been observing the gamma-ray sky in the energy range of $\sim$ 18 keV to $\sim$ 8 MeV. Above the energy range of INTEGRAL/SPI, the \textit{Fermi} Large Area Telescope is a space-based pair conversion telescope, which is most sensitive to gamma rays from around 20 MeV to above 300 GeV. Ground-based imaging atmospheric Cherenkov telescopes can detect more energetic (TeV) gamma rays. Examples of current-generation instruments include the High Energy Stereoscopic System (H.E.S.S.), the High-Altitude Water Cherenkov Observatory (HAWC).
-    \item \emph{Cosmic rays.} The Alpha Magnetic Spectrometer (AMS-02) is a state-of-the-art cosmic-ray detector on board the International Space Station. It detects cosmic rays above the Earth atmosphere from electrons to heavy nuclei, as well as their anti-particles.
-    \item \emph{Neutrinos.} Neutrinos are very hard to detect. The  IceCube Neutrino Observatory has been able to detect astrophysical neutrinos using the large volume of ice in the Antarctic ice sheet.
+    \item \emph{Gamma rays.} The International Gamma-Ray Astrophysics Laboratory (INTEGRAL) is a space-based gamma-ray telescope~\cite{1992eocm.rept..227W}. The spectrometer on INTEGRAL (SPI) has been observing the gamma-ray sky in the energy range of $\sim$ 18 keV to $\sim$ 8 MeV. Above the energy range of INTEGRAL/SPI, the \textit{Fermi} Large Area Telescope is a space-based pair conversion telescope, which is most sensitive to gamma rays from around 20 MeV to above 300 GeV~\cite{2009ApJ...697.1071A}. Ground-based imaging atmospheric Cherenkov telescopes can detect more energetic (TeV) gamma rays. Examples of current-generation instruments include the High Energy Stereoscopic System (H.E.S.S.)~\cite{2002APS..APRU11010K} located in Namibia, the High-Altitude Water Cherenkov Observatory(HAWC)~\cite{2007APS..APRM11009D} located in Mexico.
+    \item \emph{Cosmic rays.} The Alpha Magnetic Spectrometer (AMS-02) is a state-of-the-art cosmic-ray detector on board the International Space Station~\cite{2001ICRC....6.2192B}. It detects cosmic rays above the Earth atmosphere from electrons to heavy nuclei, as well as their anti-particles.
+    \item \emph{Neutrinos.} Neutrinos are very hard to detect. The IceCube Neutrino Observatory has been able to detect astrophysical neutrinos using the large volume of ice in the Antarctic ice sheet~\cite{2003NuPhS.118..388K}.
 \end{itemize}
 
 Gamma rays and neutrinos travel to us in straight lines. In the case of annihilation, the differential flux from dark matter in the cosmos is,
 \begin{equation}\label{eq:ann}
     \frac{dN}{dEdt} = \frac{1}{8\pi}\frac{dN_\gamma}{dE_\gamma}\frac{\sigmav}{m_\chi^2}\int_{los}\int_{d\Omega}\rho^2(l,\Omega)dld\Omega.
 \end{equation}
-Here, $dN_\gamma/dE_\gamma$ is the annihilation spectrum of dark matter. The integral over the solid angle and the line-of-sight (los) is called the J-factor of dark matter annihilation,
+Here, $dN_\gamma/dE_\gamma$ is the annihilation spectrum of dark matter. The integral over the solid angle and the line-of-sight (los) is called the J-factor of dark matter annihilation:
 \begin{equation}\label{eq:jfactor}
     J_\mathrm{ann} = \int_{los}\int_{d\Omega}\rho^2(l,\Omega)dld\Omega.
 \end{equation}
@@ -355,43 +544,48 @@ The dark matter density $\rho(l,\Omega)$ is squared to account for the annihilat
 
 One of the most interesting regions to search for dark matter annihilation is the Galactic center. In Sec.~\ref{sse:rotation_curve}, we have shown that the dark matter density $\rho \sim 1/r^2$ at large radii to explain the flat rotation curve. However, rotation curve measurements are uncertain and only weakly constrain the dark matter density at small radii, especially for the Milky Way. The N-body simulation is a commonly used approach to study the dark matter distribution at different scales. 
 {An N-body simulation is a numerical simulation that approximates the dynamics of particles considering the interactions (e.g., gravitational forces) between the particles.}
-Based on N-body simulations, the Navarro-Frenk-White (NFW) profile~\cite{1996ApJ...462..563N} suggests a universal dark matter profile of the following form,
+Based on N-body simulations, the Navarro-Frenk-White (NFW) profile~\cite{1996ApJ...462..563N} suggests a universal dark matter density distribution of the following form:
 \begin{equation}
     \rho(r)_\mathrm{NFW} = \frac{\rho_0}{\left(\dfrac{r}{R_s}\right)\left(1+\dfrac{r}{R_s}\right)^{2}},
 \end{equation}
-where $r$ is the distance from the Galactic center. The scale density $\rho_0$ and radius $R_s$ varies from galaxy to galaxy.
-The NFW profile can often be generalized to,
+where $r$ is the distance from the Galactic center. The scale density $\rho_0$ and radius $R_s$ vary from galaxy to galaxy.
+The NFW profile can often be generalized to the following form:
 \begin{equation}
   \rho(r)_\mathrm{gNFW} = \dfrac{\rho_0}{\left(\dfrac{r}{R_s}\right)^\gamma\left(1+\dfrac{r}{R_s}\right)^{(3-\gamma)}},
 \end{equation}
 where $\gamma$ controls the inner slope of the dark matter distribution. The original NFW profile is recovered with $\gamma=1$.
 In the NFW profile, dark matter density peaks as $\rho \sim (1/r)^{-\gamma}$ toward the Galactic center, making it the brightest region to search for dark matter annihilation.
 
-Dark matter annihilation can also produce charged particles. The charged particles diffuse in the Galactic magnetic field as cosmic rays, losing their energies and directional information. The local density of the cosmic rays produced by dark matter can be calculated by solving the propagation of cosmic rays,
+Dark matter annihilation can also produce charged particles. The charged particles diffuse in the Galactic magnetic field as cosmic rays, losing their energies and directional information. The local density of the cosmic rays produced by dark matter can be calculated by solving the propagation equation of cosmic rays, which is given by
 \begin{equation}
     \frac{\partial\psi}{\partial t} = q(\vec{r},E,t) + D(E)\nabla^2\psi + \frac{\partial}{\partial E}(\dot{E}\psi),
 \end{equation}
 where $q(\vec{r},E,t)$ is the source term of cosmic rays, $D(E)$ is the diffusion coefficient and $\dot{E}$ is the energy loss of the cosmic rays. Public tools have been developed by the community to numerically solve the propagation of cosmic rays. Examples include \textsc{dragon}~\cite{2010APh....34..274D} and \textsc{galprop}~\cite{1998ApJ...509..212S}.
 
-\subsubsection{Current anomalies}
+\subsection{Current anomalies in indirect detection}
 
-A few anomalies has been identified from astrophysical observations, which can possibly be interpreted as indirect dark matter signals
+{In indirect detection, a few possible dark matter signals have been claimed. However, none of them have been confirmed to have dark matter origin. Either the statistical significance of the signal is under debate, or alternative explanations exist. Therefore, these signals are usually referred to as anomalies.}
 
-The AMS-02 experiment has been measuring various species of cosmic rays arriving on the Earth from the Universe. The AMS-02 has detected a significant positron excess~\cite{2014PhRvL.113l1101A} above $\sim$ 200 GeV. The excess has been explored as an annihilation signal from WIMP dark matter of mass $\sim$ TeV, but the $\sigmav$ needed to explain the positron flux is much larger than the thermal relic cross section. More likely, the positron excess can be explained by the nearby pulsars~\cite{2009JCAP...01..025H}. A less significant anti-proton excess is also recently claimed~\cite{2017PhRvL.118s1101C}. However, the robustness of the signal needs further investigations~\cite{2019PhRvD..99j3026C, 2021arXiv210714606H}.
+% A few anomalies has been identified from astrophysical observations, which can possibly be interpreted as indirect dark matter signals
 
-The XMM-Newton observations has detected a spectral line signal at an energy of 3.5 keV from galaxy clusters~\cite{2014ApJ...789...13B}. The signal may be explained by the decay of sterile neutrino dark matter (another type of popular dark matter candidate~\cite{2002PrPNP..48..161V}) with a mass $\sim$ 7 keV. 
+{In cosmic-ray experiments, searching for extra cosmic-ray anti-particles is highly motivated since they could be products of dark matter annihilation or decay.} The AMS-02 experiment has been measuring various species of cosmic rays arriving on the Earth from the Universe. The AMS-02 has detected a significant positron excess~\cite{2014PhRvL.113l1101A} {in the positron fraction -- the ratio between cosmic-ray positrons and total cosmic-ray electrons/positrons. The observed positron fraction rises from energies $\sim$ 10 GeV and continues to above $\sim$ 200 GeV. The excess indicates primary positron sources in the Galaxy.} It has been explored as an annihilation signal from WIMP dark matter of mass $\sim$ TeV, but the $\sigmav$ needed to explain the positron flux is much larger than the thermal relic cross section. More likely, the positron excess can be explained by nearby pulsars~\cite{2009JCAP...01..025H}. A less significant anti-proton excess is also recently claimed~\cite{2017PhRvL.118s1101C}. However, the robustness of the signal needs further investigations~\cite{2019PhRvD..99j3026C, 2021arXiv210714606H}.
 
-The gamma-ray excess toward the Galactic center detected by the \textit{Fermi} Large Area Telescope is highly significant. We discuss this excess and its implication for dark matter annihilation in Chapter~\ref{ch:GCE} in detail.
+The XMM-Newton observations has detected a spectral line signal at an energy of 3.5 keV from galaxy clusters~\cite{2014ApJ...789...13B}. The signal may be explained by the decay of sterile neutrino dark matter (another type of popular dark matter candidate~\cite{2002PrPNP..48..161V}) with a mass $\sim$ 7 keV. {Follow-up observations have yielded mixed results. Detection of the 3.5 keV line has been claimed in the Galactic center~\cite{2015PhRvL.115p1301B}. But observations of many systems (including e.g., the Draco dwarf galaxy~\cite{2016MNRAS.458.3592J}, Andromeda Galaxy~\cite{2014PhRvD..89b5017H}) have found no signals and have placed strong constraints on sterile neutrinos dark matter.} 
 
-Toward the Galactic center, the 511 keV line emission is another long-standing signal~\cite{1978ApJ...225L..11L}. It is difficult to explain the signal with WIMP dark matter annihilation. We study the spatial morphology of the 511 keV emission in Chapter~\ref{ch:511keV}.
+The gamma-ray excess toward the Galactic center detected by the \textit{Fermi} Large Area Telescope is highly significant~\cite{2009arXiv0910.2998G,2009arXiv0912.3828V,2011PhLB..697..412H,2012PhRvD..86h3511A,2013PhRvD..88h3521G,2014PhRvD..89f3515M,2013PDU.....2..118H,2014PhRvD..90b3526A,2016PDU....12....1D,2015JCAP...03..038C,2015PhRvD..91l3010Z,2016ApJ...819...44A,2017ApJ...840...43A}. {The excess is discovered after the known sources and the Galactic diffuse emission are modeled in the Galactic center region. The signal is nearly spherically symmetric around the Galactic center and has an energy spectrum that is peaked at a few GeV. The spectrum and intensity of the excess is overall consistent with WIMP dark matter annihilation. But alternative explanations also exist. A population of unresolved millisecond pulsars is the leading astrophysical candidate.} We discuss this excess and its implication for dark matter annihilation in Chapter~\ref{ch:GCE} in detail.
+
+Toward the Galactic center, the 511 keV line emission is another long-standing signal~\cite{1978ApJ...225L..11L}. {It is believed to originate from the annihilation of low-energy positrons with cosmic-ray electrons. The flux of the Galactic 511 keV signal requires an injection of $10^{50}$ positrons per year~\cite{2006A&A...449..869P}. MeV dark matter annihilation has been considered as the possible positron source but has been ruled out by constraints from the CMB~\cite{2016PhRvD..94j3525W}. Possible astrophysical sources of the positrons include supernovae~\cite{2006ApJ...640L..55K}, massive stars~\cite{2019A&A...632A..73P}, and progenitors of millisecond pulsars~\cite{2018MNRAS.480.3826B}.}
+%It is difficult to explain the signal with WIMP dark matter annihilation. 
+In Chapter~\ref{ch:511keV}, we explore the possible origin of the 511 keV emission by studying its spatial morphology.
 % In the next chapter, we discuss the gamma-ray excess toward the Galactic center detected by the \textit{Fermi} Large Area Telescope .
 
 
 \chapter{Galactic center excess} \label{ch:GCE}
 
-The \emph{Fermi} Large Area Telescope (LAT) has discovered a gamma-ray excess toward the center of the Milky Way. The signal, often referred as the Galactic center excess (GCE), was first identified by \citet{2009arXiv0910.2998G}, and further confirmed by many collaborations~\cite{2009arXiv0912.3828V,2011PhLB..697..412H,2012PhRvD..86h3511A,2013PhRvD..88h3521G,2014PhRvD..89f3515M,2013PDU.....2..118H,2014PhRvD..90b3526A,2016PDU....12....1D,2015JCAP...03..038C,2015PhRvD..91l3010Z,2016ApJ...819...44A,2017ApJ...840...43A}. In this chapter, we review the possible interpretations of the signal, including the dark matter scenario and the millisecond pulsar scenario. We show that understanding the spatial morphology of the GCE is crucial for disentangling the millisecond pulsar signal from the dark matter signal.
+The \emph{Fermi} Large Area Telescope (LAT) has discovered a gamma-ray excess toward the center of the Milky Way. The signal, often referred to as the Galactic center excess (GCE), was first identified by \citet{2009arXiv0910.2998G}, and further confirmed by many collaborations~\cite{2009arXiv0912.3828V,2011PhLB..697..412H,2012PhRvD..86h3511A,2013PhRvD..88h3521G,2014PhRvD..89f3515M,2013PDU.....2..118H,2014PhRvD..90b3526A,2016PDU....12....1D,2015JCAP...03..038C,2015PhRvD..91l3010Z,2016ApJ...819...44A,2017ApJ...840...43A}. {In this chapter, we introduce the \textit{Fermi} LAT and the gamma-ray sky in Sec.~\ref{se:fermi} and Sec.~\ref{se:gamma-sky}, respectively. We discuss the discovery of the GCE and its dark matter interpretation in Sec.~\ref{se:GCEdm}. Section~\ref{se:GCEmsp} reviews the millisecond pulsar interpretation of the GCE and Section~\ref{se:bulge_model} introduces the stellar mass distribution in the Galactic bulge. We review the recent analyses on the morphology of the GCE in Sec.~\ref{se:GCEmor}}
+% In this chapter, we review the possible interpretations of the signal, including the dark matter scenario and the millisecond pulsar scenario. We show that understanding the spatial morphology of the GCE is crucial for disentangling the millisecond pulsar signal from the dark matter signal.
 
-\section{\textit{Fermi}-LAT}
+\section{\textit{Fermi}-LAT}\label{se:fermi}
 
 The \textit{Fermi}-LAT satellite was launched by NASA on June 11, 2008. It is a pair-conversion gamma-ray telescope, covering the energy range from around 20 MeV to above 300 GeV. Figure~\ref{fig:lat}~\cite{2009ApJ...697.1071A} shows the schematic diagram of the LAT. An incoming gamma ray would interact with the tungsten layers in the detector, creating a pair of electron and positron. The trajectories of the pair particles are tracked by the silicon strips in the detector, allowing the LAT to recover the direction of the gamma ray. The calorimeter at the bottom of the detector stops the electron and positron to measure the total energy of the gamma ray.
 
@@ -404,7 +598,7 @@ As a wide field-of-view telescope, the LAT covers about 20\% of the sky at each 
     \label{fig:lat}
 \end{figure}
 
-\section{Gamma-ray sky and the GCE}
+\section{Gamma-ray sky}\label{se:gamma-sky}
 
 Since its mission began, the \textit{Fermi}-LAT has discovered thousands of gamma-ray sources and revealed the large-scale diffuse gamma-ray emission in the sky. Figure~\ref{fig:gamma_sky} shows the gamma-ray sky constructed by 5-year Fermi data above 1 GeV. Most remarkably, the Galactic diffuse emission dominates the central plane of the Milky Way.
 
@@ -416,23 +610,44 @@ Since its mission began, the \textit{Fermi}-LAT has discovered thousands of gamm
 \end{figure}
 % https://svs.gsfc.nasa.gov/11342
 
-As mentioned in Sec.~\ref{sse:indirect}, one of the most exciting regions for searching dark matter annihilation is the Galactic center. However, the rich diffuse emission in the Galactic center represents a problematic background for any exotic gamma-ray signal search from the same region. Luckily, the template fitting technique has been developed as a standard analysis method for \textit{Fermi}-LAT data to improve the instrumental sensitivity. By having maps of different background emissions and the expected signal in the region of interest, one can fit the data to a linear combination of different maps (templates) and potentially detect signals below the background emission.
+%As mentioned in Sec.~\ref{sse:indirect}, one of the most exciting regions for searching dark matter annihilation is the Galactic center. However, t
+The rich Galactic diffuse emission represents a problematic background for any exotic gamma-ray signal search from the gamma-ray sky, especially for the low-latitude region. Therefore, template fitting technique has been developed as a standard analysis method for \textit{Fermi}-LAT data to improve the instrumental sensitivity. By having maps of different background emissions and the expected signal in the region of interest, one can fit the data to a linear combination of different maps (templates) and potentially detect signals below the background emission.
 
-The Galactic diffuse emission that dominates the Galactic plane is generated by cosmic rays interacting with the interstellar medium (gas and radiation field in the Galaxy). Three physical processes contribute to the Galactic diffuse emission: bremsstrahlung of cosmic-ray electrons with the interstellar gas; pion production from cosmic-ray protons colliding with the interstellar gas; and inverse Compton scattering of cosmic-ray electrons off the interstellar radiation field. The first two processes trace spatial distribution of the gas in the Milky Way, which can be measured by spectral line surveys of HI and CO gas. The cosmic-ray electrons' propagation and interaction with the interstellar radiation field (including the CMB, inferred, and starlight photons) determine the inverse Compton scattering, which can be calculated with \textsc{galprop}~\cite{2017ApJ...846...67P}.
-
-The photon counts detected by the \textit{Fermi}-LAT from each pixel on the sky map over a particular energy bin $\Delta E$ can be treated independently. Therefore the likelihood function is Poissonian,
+{To find the best model that describes the data, one can maximum the likelihood function. The likelihood function describes the probability of observing the data given the chosen model.} The photon counts detected by the \textit{Fermi}-LAT from each pixel on the sky map over a particular energy bin $\Delta E$ can be treated independently. Therefore, the likelihood function is characterized by the Poisson distribution:
 \begin{equation}
-    \mathcal{L}(\mu|n)= \sum_{ij}\frac{\mu_{ij}^{n_{ij}}e^{(-\mu_{ij})}}{n_{ij}!},
+    \mathcal{L}(\mu|n)= \sum_{ij}\frac{\mu_{ij}^{n_{ij}}e^{(-\mu_{ij})}}{n_{ij}!}.
 \end{equation}
-where $n_{ij}$ is the \textit{Fermi} data for pixels of different longitudinal bins $i$ and latitudinal bins $j$ and the model $\mu_{ij}$ is a linear combination of model templates $\Phi_{ij}$,
+Here, $n_{ij}$ is the \textit{Fermi} data for pixels of different longitudinal bins $i$ and latitudinal bins $j$ and the model $\mu_{ij}$ is a linear combination of model templates $\Phi_{ij}$, namely
 \begin{equation}
     \mu_{ij} = \sum_m \alpha_m \Phi^m_{ij},
 \end{equation}
 where $a_m$'s are the normalization factors for different templates, such as the gas-correlated maps (for the bremsstrahlung and the pion decay), the inverse Compton map, and the point sources in the region.
 
+The Galactic diffuse emission that dominates the Galactic plane is generated by cosmic rays interacting with the interstellar medium (gas and radiation field in the Galaxy). Three physical processes contribute to the Galactic diffuse emission: bremsstrahlung of cosmic-ray electrons with the interstellar gas; pion production from cosmic-ray protons colliding with the interstellar gas; and inverse Compton scattering of cosmic-ray electrons off the interstellar radiation field. The first two processes trace spatial distribution of the gas in the Milky Way, which can be measured by spectral line surveys of HI and CO gas. The cosmic-ray electrons' propagation and interaction with the interstellar radiation field (including the CMB, inferred, and starlight photons) determine the inverse Compton scattering, which can be calculated with \textsc{galprop}~\cite{2017ApJ...846...67P}.
+
+% The photon counts detected by the \textit{Fermi}-LAT from each pixel on the sky map over a particular energy bin $\Delta E$ can be treated independently. Therefore, the likelihood function is Poissonian:
+% \begin{equation}
+%     \mathcal{L}(\mu|n)= \sum_{ij}\frac{\mu_{ij}^{n_{ij}}e^{(-\mu_{ij})}}{n_{ij}!}.
+% \end{equation}
+% Here, $n_{ij}$ is the \textit{Fermi} data for pixels of different longitudinal bins $i$ and latitudinal bins $j$ and the model $\mu_{ij}$ is a linear combination of model templates $\Phi_{ij}$, namely
+% \begin{equation}
+%     \mu_{ij} = \sum_m \alpha_m \Phi^m_{ij},
+% \end{equation}
+% where $a_m$'s are the normalization factors for different templates, such as the gas-correlated maps (for the bremsstrahlung and the pion decay), the inverse Compton map, and the point sources in the region.
+
 {The \textit{Fermi}-LAT has also revealed the Fermi Bubbles~\cite{2010ApJ...724.1044S}, two large gamma-ray bubbles that extend to 50$^\circ$ above and below the Galactic center. They are approximately symmetric about the Galactic plane and have nearly uniform surface brightness. The bubbles are potentially related to the past energy injection from the supermassive black hole at the center of the Galaxy. They are important background templates for studying the diffuse gamma-ray emission toward the Galactic center. We will discuss the Fermi Bubbles in more detail in Chapter~\ref{ch:CTA} and Chapter~\ref{ch:511keV}.   }
 
-The expected gamma-ray signal from dark matter annihilation is spherically symmetric and peaks at the Galactic center, as implied by the Navarro-Frenk-White (NFW) profile of dark matter. Including a NFW profile with an inner index $\gamma \sim 1.0 - 1.2$ in the template fitting, a gamma-ray excess toward the Galactic center has been identified in the \textit{Fermi}-LAT data~\cite{2009arXiv0910.2998G, 2009arXiv0912.3828V,2011PhLB..697..412H,2012PhRvD..86h3511A,2013PhRvD..88h3521G,2014PhRvD..89f3515M,2013PDU.....2..118H,2014PhRvD..90b3526A,2016PDU....12....1D,2015JCAP...03..038C,2015PhRvD..91l3010Z,2016ApJ...819...44A,2017ApJ...840...43A}. The spectra of the excess depend on the background models and fitting procedures in different studies, but overall they are consistent with a spectrum that peaks at a few GeV (see Fig.~\ref{fig:gce_spectra}~\cite{Murgia:2020dzu}).
+% The expected gamma-ray signal from dark matter annihilation is spherically symmetric and peaks at the Galactic center, as implied by the Navarro-Frenk-White (NFW) profile of dark matter. Including a NFW profile with an inner index $\gamma \sim 1.0 - 1.2$ in the template fitting, a gamma-ray excess toward the Galactic center has been identified in the \textit{Fermi}-LAT data~\cite{2009arXiv0910.2998G, 2009arXiv0912.3828V,2011PhLB..697..412H,2012PhRvD..86h3511A,2013PhRvD..88h3521G,2014PhRvD..89f3515M,2013PDU.....2..118H,2014PhRvD..90b3526A,2016PDU....12....1D,2015JCAP...03..038C,2015PhRvD..91l3010Z,2016ApJ...819...44A,2017ApJ...840...43A}. The spectra of the excess depend on the background models and fitting procedures in different studies, but overall they are consistent with a spectrum that peaks at a few GeV (see Fig.~\ref{fig:gce_spectra}~\cite{Murgia:2020dzu}).
+% \begin{figure}[htb]
+%     \centering
+%     \includegraphics[width=\textwidth]{Figures/Intro/gcespectrum.png}
+%     \caption{GCE fluxes based on different studies~\cite{Murgia:2020dzu}. The fluxes are scaled to a $15^\circ \times 15^\circ$ region about the Galactic center. The peak energy of $\sim 1 - 3$ GeV is a robust feature of the GCE spectrum.}
+%     \label{fig:gce_spectra}
+% \end{figure}
+
+\section{GCE and the dark matter interpretation}\label{se:GCEdm}
+
+As mentioned in Sec.~\ref{sse:indirect}, one of the most exciting regions to search for dark matter annihilation is the Galactic center. The expected gamma-ray signal from dark matter annihilation is spherically symmetric and peaks at the Galactic center, as implied by the Navarro-Frenk-White (NFW) profile of dark matter. Including a NFW profile with an inner index $\gamma \sim 1.0 - 1.2$ in the template fitting, a gamma-ray excess toward the Galactic center has been identified in the \textit{Fermi}-LAT data~\cite{2009arXiv0910.2998G, 2009arXiv0912.3828V,2011PhLB..697..412H,2012PhRvD..86h3511A,2013PhRvD..88h3521G,2014PhRvD..89f3515M,2013PDU.....2..118H,2014PhRvD..90b3526A,2016PDU....12....1D,2015JCAP...03..038C,2015PhRvD..91l3010Z,2016ApJ...819...44A,2017ApJ...840...43A}. The spectra of the excess depend on the background models and fitting procedures in different studies, but overall they are consistent with a spectrum that peaks at a few GeV (see Fig.~\ref{fig:gce_spectra}~\cite{Murgia:2020dzu}).
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/Intro/gcespectrum.png}
@@ -440,15 +655,13 @@ The expected gamma-ray signal from dark matter annihilation is spherically symme
     \label{fig:gce_spectra}
 \end{figure}
 
-\subsection{Dark matter interpretation}
-
-{An NFW profile of dark matter with an inner slope $\gamma \approx 1.2$ is well motivated to explain the spatial morphology of the GCE. In the meantime,} WIMP dark matter annihilation can also explain the unique feature of the peaked GCE spectrum. 
-%The implied $\sigmav$ of the GCE, after normalizing the NFW profile with local dark matter density, is consistent with the thermal relic cross section. 
-The gamma-ray flux from dark matter annihilation, as described by Eq.~\ref{eq:ann}, is
+% {An NFW profile of dark matter with an inner slope $\gamma \approx 1.2$ is well motivated to explain the spatial morphology of the GCE. In the meantime,} WIMP dark matter annihilation can also explain the unique feature of the peaked GCE spectrum. 
+%The implied $\sigmav$ of the GCE, after normalizing the NFW profile with local dark matter density, is consistent with the thermal relic cross section.
+The unique peaked GCE spectrum can be explained by WIMP dark matter annihilation. The gamma-ray flux from dark matter annihilation, as described by Eq.~\ref{eq:ann}, is
 \begin{equation}
     \frac{dN}{dEdt} = \frac{1}{8\pi}\frac{dN_\gamma}{dE_\gamma}\frac{\sigmav}{m_\chi^2}J_\mathrm{ann}.
 \end{equation}
-The $dN_\gamma/dE_\gamma$ is the gamma-ray spectrum per dark matter annihilation and depends on the dark matter mass and annihilation final states. To produce a peaked spectrum at a few GeV, the dark matter mass varies from 30 GeV to 60 GeV~\cite{2011PhRvD..84l3005H, 2012PhRvD..86h3511A,2013PhRvD..88h3521G,2016PDU....12....1D,2015JCAP...03..038C}. Multiple annihilation channels can explain the data, including the lepton channels (e.g., $\chi\chi\to\tau^+\tau^-$), the quark channels (e.g., $\chi\chi\to b\bar{b}$), and mixtures of them~\cite{2011PhRvD..84l3005H, 2012PhRvD..86h3511A,2013PhRvD..88h3521G,2016PDU....12....1D,2015JCAP...03..038C}. Knowing the mass and annihilation spectrum of dark matter, we can infer the annihilation cross section $\sigmav$. The estimated values is around $1 - 5 \times 10^{-26}\ \mathrm{cm}^3\  \mathrm{s}^{-1}$, which are consistent with the thermal relic cross section discussed in Sec.~\ref{se:wimp}.
+The $dN_\gamma/dE_\gamma$ is the gamma-ray spectrum per dark matter annihilation and depends on the dark matter mass and annihilation final states. To produce a peaked spectrum at a few GeV, the dark matter mass varies from 30 GeV to 60 GeV~\cite{2011PhRvD..84l3005H, 2012PhRvD..86h3511A,2013PhRvD..88h3521G,2016PDU....12....1D,2015JCAP...03..038C}. Multiple annihilation channels can explain the data, including the lepton channels (e.g., $\chi\chi\to\tau^+\tau^-$), the quark channels (e.g., $\chi\chi\to b\bar{b}$), and mixtures of them~\cite{2011PhRvD..84l3005H, 2012PhRvD..86h3511A,2013PhRvD..88h3521G,2016PDU....12....1D,2015JCAP...03..038C}. Knowing the mass and annihilation spectrum of dark matter, we can infer the velocity-averaged annihilation cross section $\sigmav$. The estimated values is around $1 - 5 \times 10^{-26}\ \mathrm{cm}^3\  \mathrm{s}^{-1}$, which are consistent with the thermal relic cross section discussed in Sec.~\ref{se:wimp}.
 
 In general, the dark matter interpretation has been proved highly alluring and has been popular since the discovery of the GCE.
 
@@ -464,7 +677,7 @@ In general, the dark matter interpretation has been proved highly alluring and h
 
 % Annihilation spectrum, J-factor, NFW profile, etc
 
-\section{Millisecond pulsar interpretation}
+\section{Millisecond pulsar interpretation}\label{se:GCEmsp}
 
 Although a dark matter annihilation signal is consistent with the GCE,  astrophysical sources may also explain the observed spectrum and intensity. A population of unresolved millisecond pulsars in the Galactic bulge is the most promising candidate.
 
@@ -474,16 +687,16 @@ Massive stars with an initial mass range $\sim 9.5 - 25$ solar masses ($M_\odot$
 
 Two of the most important timing measurements of pulsars are their spin period $P$ and the spin-down rate $\dot{P}$. Those measurements are usually shown on the $P-\dot{P}$ diagram (for an example, see Fig.~\ref{fig:pp}~\cite{2011AIPC.1357..269T,2005AJ....129.1993M}), which provides unique insights into the evolution of pulsars. Two distinguishing classes of pulsars can be identified from the $P-\dot{P}$ diagram: the majority of ``normal'' pulsars with $P \sim 1$ s and $\dot{P} \sim\ 10^{-15}$ s s$^{-1}$ and the millisecond pulsars  with $P \sim 1$ ms and $\dot{P} \sim\ 10^{-20}$ s s$^{-1}$ in the lower left part of the diagram.
 
-Pulsar spin-down is related to the rate of rotational kinetic energy loss,
+Pulsar spin-down is related to the rate of rotational kinetic energy loss:
 \begin{equation}\label{eq:spin-down}
     \dot{E}_\mathrm{rot} = 4\pi^2 I \dot{P}P^{-3}.
 \end{equation}
 The moment of inertia of the pulsar, $I = \frac{2}{5}MR^2$. For typical neutron stars, the mass $M \approx 1.4 M_\odot$ and the radius $R \approx 10$ km. 
-A large fraction of $\dot{E}_\mathrm{rot}$ is converted into the magnetic dipole radiation,
+A large fraction of $\dot{E}_\mathrm{rot}$ is converted into the magnetic dipole radiation:
 \begin{equation}\label{eq:dipole}
 \dot{E}_\mathrm{rot} \approx \dot{E}_\mathrm{dipole} = \frac{32\pi^4}{3c^3}\frac{|\bm{m}|^2}{P^4}\sin^2\alpha,
 \end{equation}
-where $c$ is the speed of light, $\bm{m}$ is the magnetic moment of the pulsar, and $\alpha$ is the angle between the magnetic moment and and spin axis. This implies that,
+where $c$ is the speed of light, $\bm{m}$ is the magnetic moment of the pulsar, and $\alpha$ is the angle between the magnetic moment and and spin axis. This implies that the spin-down rate $\dot{P}$ is related to the period $P$ by the following equation:
 \begin{equation}
     \dot{P} = \frac{8\pi^2|\bm{m}|^2\sin^2\alpha}{3Ic^3}P^{-1}.
 \end{equation}
@@ -491,13 +704,13 @@ The inferred age of the pulsar, assuming that the magnetic moment does not vary 
 \begin{equation}\label{eq:pulsar-age}
     \tau = \frac{P}{2\dot{P}}.
 \end{equation}
-The surface magnetic field strength of the pulsar is related to the magnetic moment, $B_S\approx|\bm{m}|/R^3$. By rearranging Eq.~\ref{eq:spin-down} and Eq.~\ref{eq:dipole},
+The surface magnetic field strength of the pulsar is related to the magnetic moment, $B_S\approx|\bm{m}|/R^3$. By rearranging Eq.~\ref{eq:spin-down} and Eq.~\ref{eq:dipole}, one obtains
 \begin{equation}\label{eq:pulsar-B}
     B_S = \sqrt{\dfrac{3c^3}{8\pi^2}\dfrac{I}{R^6\sin^2\alpha}P\dot{P}}.
 \end{equation}
 Based on Eq.~\ref{eq:pulsar-age} and Eq.~\ref{eq:pulsar-B}, one can plot the equal age or magnetic field strength lines on the $P-\dot{P}$ diagram. They are shown as green dotted lines and red dotted lines on Fig.~\ref{fig:pp}.
 
-The very low $\dot{P}$'s of millisecond pulsars suggest that they are old pulsars with magnetic field $\sim$ three orders of magnitude lower than those young pulsars. The fast rotation ($P \sim 1$ ms) of millisecond pulsars can be explained by the recycling model: normal pulsars, after losing most of their magnetic field strength, could be spun up by the accretion of matter from their companion stars in a binary system~\cite{1982Natur.300..728A,1998Natur.394..344W}. The recycling model explains the observation that millisecond pulsars are usually found in binary systems.
+The very low $\dot{P}$'s of millisecond pulsars suggest that they are old pulsars with magnetic field around three orders of magnitude lower than those young pulsars. The fast rotation ($P \sim 1$ ms) of millisecond pulsars can be explained by the recycling model: normal pulsars, after losing most of their magnetic field strength, could be spun up by the accretion of matter from their companion stars in a binary system~\cite{1982Natur.300..728A,1998Natur.394..344W}. The recycling model explains the observation that millisecond pulsars are usually found in binary systems.
 
 \begin{figure}[htb]
     \centering
@@ -520,7 +733,7 @@ In the energy range of \textit{Fermi}-LAT, the gamma-ray spectrum of millisecond
 
 The observed gamma-ray spectra of millisecond pulsars are, within uncertainties, consistent with the spectrum of the GCE~\cite{2011JCAP...03..010A}. Therefore, a large number of millisecond pulsars that are individually unresolved by \textit{Fermi}-LAT could explain the spectrum of the GCE. The old stellar population in the Galactic bulge will be able to host enough faint millisecond pulsars to explain the observed intensity of the GCE~\cite{2018ApJ...863..199G,2020JCAP...12..035P}.
 
-It has been believed that the millisecond pulsar distribution in the inner Galaxy is compatible with the squared NFW profile based on the observation of low-mass X-ray binaries in M31~\cite{2012PhRvD..86h3511A}. However, \citet{2013PhRvD..88h3009H} argued that millisecond pulsar distribution is concentrated in the Galactic bulge and disk, therefore cannot explain the extended emission of the GCE. Nevertheless, the spatial morphology of the GCE is derived from the data and depends on the models of the Galactic diffuse emission. Furthermore, recent reanalyses have demonstrated that the GCE is actually better described by the old stellar distribution of the Galactic bulge than by the NFW profile expected for the dark matter annihilation, which we discuss in the following sections.
+It has been believed that the millisecond pulsar distribution in the inner Galaxy is compatible with the squared NFW profile based on the observation of low-mass X-ray binaries in the Andromeda Galaxy~\cite{2012PhRvD..86h3511A}. However, \citet{2013PhRvD..88h3009H} argued that millisecond pulsar distribution is concentrated in the Galactic bulge and disk, therefore cannot explain the extended emission of the GCE. Nevertheless, the spatial morphology of the GCE is derived from the data and depends on the models of the Galactic diffuse emission. Furthermore, recent reanalyses have demonstrated that the GCE is actually better described by the old stellar distribution of the Galactic bulge than by the NFW profile expected for the dark matter annihilation, which we discuss in the following sections.
 %\subsection{Population in the Galactic bulge}
 
 
@@ -532,12 +745,12 @@ It has been believed that the millisecond pulsar distribution in the inner Galax
 
 The stellar mass distribution in the inner Galaxy is unique and complicated. It shares few features with the dark matter distribution (the NFW profile), which is spherically symmetric.
 
-Millisecond pulsars, as ancient neutron stars, should trace the old stellar distribution in the Galactic bulge\footnote{In principle, the kick velocities of neutron stars at birth~\cite{2018ApJ...862...79E} will affect the spatial distribution of millisecond pulsars. However, the kicks experienced by MSPs should be lower than for isolated pulsars, which is also necessary for them to be confined to globular clusters.}. In this section, we introduce the bulge models in the Galactic bulge, which are used to study the spatial morphology of inverse Compton emission from millisecond pulsars (Chapter~\ref{ch:IC_MSPs} and~\ref{ch:CTA}) and Galactic 511 keV emission (Chapter~\ref{ch:511keV}).
+Millisecond pulsars, as ancient neutron stars, should trace the old stellar distribution in the Galactic bulge\footnote{In principle, the kick velocities of neutron stars at birth~\cite{2018ApJ...862...79E} will affect the spatial distribution of millisecond pulsars. However, the kicks experienced by MSPs should be lower than for isolated pulsars, which is also necessary for them to be confined to globular clusters.}. In this section, we introduce the stellar mass distributions in the Galactic bulge, which are used to study the spatial morphology of the inverse Compton emission from millisecond pulsars (Chapter~\ref{ch:IC_MSPs} and~\ref{ch:CTA}) and the Galactic 511 keV emission (Chapter~\ref{ch:511keV}).
 % For example, while isolated pulsars are consistent with a Maxwellian velocity distribution with dispersion of 190 km/s~\cite{1997MNRAS.291..569H}, MSP estimates fall in the ranges $10-50$~\cite{2013PhRvD..88h3009H,1997ApJ...482..971C}, $85\pm13$~\cite{2004IAUS..218..139H}, or at the high end $130\pm30$ km/s~\cite{1998MNRAS.295..743L}
 
 \subsection{Boxy bulge}
 
-The mid- and near-IR signals of the inner Galaxy stars reveal a bar structure. The Galactic bar makes a tilt angle $\theta_0$ from the GC-Sun direction while the Sun is located at $\sim$10 pc above the Galactic plane. The line-of-sight view of the Galactic bar shows a boxy shape, so it is often referred as the boxy bulge (see Fig.~\ref{fig:bb_los}). Here, we introduce the bar model derived by~\citet{1998ApJ...492..495F} from data taken with the Diffuse Infrared Background Experiment instrument on board the Cosmic Background Explorer. The shape of the bar is a generalized ellipsoid which can be parametrized as
+The mid- and near-IR signals of the inner Galaxy stars reveal a bar structure. The Galactic bar makes a tilt angle $\theta_0$ from the GC-Sun direction while the Sun is located at $\sim$10 pc above the Galactic plane. The line-of-sight view of the Galactic bar shows a boxy shape, so it is often referred to as the boxy bulge (see Fig.~\ref{fig:bb_los}). Here, we introduce the bar model derived by~\citet{1998ApJ...492..495F} from data taken with the Diffuse Infrared Background Experiment instrument on board the Cosmic Background Explorer. The shape of the bar is a generalized ellipsoid which can be parametrized as
 \begin{align}\label{eq:Rs}
   R_{\perp}^{C_{\perp}} &= \left(\dfrac{|X'|}{a_x}\right)^{C_{\perp}} + \left(\dfrac{|Y'|}{a_y}\right)^{C_{\perp}},\\
   R_s^{C_{\parallel}} &= R_{\perp}^{C_{\parallel}} + \left(\dfrac{|Z'|}{a_z}\right)^{C_{\parallel}},
@@ -670,9 +883,9 @@ We only consider the X-shaped bulge in Chapter~\ref{ch:511keV} when we study the
 	\label{fig:bulge_los}
 \end{figure}
 
-\section{Spatial morphology of the GCE}
+\section{Spatial morphology of the GCE}\label{se:GCEmor}
 
-The spatial morphology of the GCE is uncertain since it is impossible to model the Galactic diffuse model perfectly. The NFW profile has been widely used in the template fitting regarding the GCE since it is compatible with the dark matter annihilation as well as the low-mass X-ray binary profile in M31~\cite{2012PhRvD..86h3511A}. The previous section shows that the stellar distribution of the boxy bulge and nuclear bulge in the inner Galaxy is different from the NFW profile. As part of the old stellar population, the millisecond pulsar distribution should trace the boxy and nuclear bulge. This critical difference between the spatial morphology of the millisecond pulsar and dark matter could help us unravel the origin of the GCE.
+The spatial morphology of the GCE is uncertain since it is impossible to model the Galactic diffuse model perfectly. The NFW profile has been widely used in the template fitting regarding the GCE since it is compatible with the dark matter annihilation as well as the low-mass X-ray binary profile in the Andromeda Galaxy~\cite{2012PhRvD..86h3511A}. The previous section shows that the stellar mass distributions of the boxy bulge and nuclear bulge in the inner Galaxy is different from the NFW profile. As part of the old stellar population, the millisecond pulsar distribution should trace the boxy and nuclear bulge. This critical difference between the spatial morphology of the millisecond pulsar and dark matter could help us unravel the origin of the GCE.
 
 Recent reanalyses for the morphology of the GCE have considered this possibility~\citep{2018NatAs...2..387M,2018NatAs...2..819B,2019JCAP...09..042M, 2020PhRvD.102d3012A}.  \citet{2018NatAs...2..387M} {improved the interstellar gas templates by considering the non-circular motion of interstellar gas in the inner Galaxy}. Then, they find evidence that the GCE is statistically non-spherical. Namely, its morphology is better described by the stellar mass distribution in the Galactic bulge and the nuclear bulge of the inner Galaxy. \citet{2018NatAs...2..819B} combined the template-fitting techniques with image reconstruction and arrived at similar conclusions.
 
@@ -714,16 +927,16 @@ Recent reanalyses for the morphology of the GCE have considered this possibility
 
 Analyses of \textit{Fermi} Large Area Telescope data have revealed a source of excess diffuse gamma rays towards the Galactic center that extends up to roughly $\pm 20$ degrees in latitude. The leading theory postulates that this GeV excess is the aggregate emission from a large number of faint millisecond pulsars (MSPs). The electrons and positrons ($e^{\pm}$) injected by this population could produce detectable inverse-Compton (IC) emissions by up-scattering ambient photons to gamma-ray energies. In this chapter, we calculate such IC emissions using \textsc{galprop}. A triaxial 3D model of the bulge stars obtained from a fit to infrared data is used as a tracer of the putative MSP population. This model is compared against one in which the MSPs are spatially distributed as a Navarro-Frenk-White squared profile. We show that the resulting spectra for both models are indistinguishable, but that their spatial morphologies have salient recognizable features. The IC component above $\sim $ TeV energies carry information on the spatial morphology of the injected $e^\pm$. Such differences could potentially be used by future high-energy gamma-ray detectors such as Cherenkov Telescope Array (CTA) to provide a viable multiwavelength handle for the MSP origin of the GeV excess.
 
-\section{Attribution}
+% \section{Attribution}
 
-This chapter is based on the following publication of which I am the first author:
-\begin{itemize}
-    \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-    % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-    % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-    % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
-\end{itemize}
-I modified the \textsc{galprop} code to include the $e^\pm$ injection from millisecond pulsars. Using the modified code, I calculated IC emission with various injection models and made plots to illustrate the results. All authors are involved in the discussion and interpretation of the results. I wrote the paper.
+% This chapter is based on the following publication of which I am the first author:
+% \begin{itemize}
+%     \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
+% \end{itemize}
+% I modified the \textsc{galprop} code to include the $e^\pm$ injection from millisecond pulsars. Using the modified code, I calculated IC emission with various injection models and made plots to illustrate the results. All authors are involved in the discussion and interpretation of the results. I wrote the paper.
 
 \section{Introduction}
 
@@ -966,7 +1179,7 @@ We adopt a similar $e^\pm$ spectrum to that used in~\citet{2015ApJ...802..124Y} 
   \dfrac{dN}{dEdt} \propto E^{-\Gamma}\exp(-E/E_{\text{cut}}),
 \end{equation}
 where $\Gamma$ is the spectral slope and $E_{\text{cut}}$ is the energy cutoff. While in the case of Supernova Remnants the spectral slope can be constrained from radio measurements, the spectral slope associated with highly energetic $e^\pm$ from pulsars is very difficult to constrain by radio measurements of the pulsed emission~\citep{2010A&A...524A..51D}. This is due to the fact that the pulsed emission is expected to originate in the polar cap region close to the pulsar magnetosphere, whereas a large portion of the most energetic $e^\pm$ pairs are thought to be accelerated by magnetic reconnection in the equatorial current sheet outside the pulsar light cylinder~\citep{2016MNRAS.457.2401C}. Similarly, the maximum energy that $e^{\pm}$ can attain from MSPs is very uncertain. The $e^\pm$ pairs produced by MSPs are expected to have much higher energies than those of normal pulsars given that MSPs have much lower magnetic fields and therefore the pair-producing photons must have higher energies~\citep{2021arXiv210105751H}. Indeed, recent particle-in-cell simulations by~\citep{2020A&A...635A.138G} posit that millisecond pulsars could accelerate $e^\pm$ pairs even up to PeV energies.
-% \DS{It is difficult to constrain the $e^\pm$ spectral index $\Gamma$ of MSPs due to their lack of pulsar wind nebulae. Numerical simulations~\cite{2011ApJ...743..181H} show a wide range of $\Gamma$ for MSPs of different periods and surface magnetic fields.}
+% {It is difficult to constrain the $e^\pm$ spectral index $\Gamma$ of MSPs due to their lack of pulsar wind nebulae. Numerical simulations~\cite{2011ApJ...743..181H} show a wide range of $\Gamma$ for MSPs of different periods and surface magnetic fields.}
 
 Here, we consider several values that have been explored in the literature~\citep[e.g.,][]{2015ApJ...802..124Y,2020A&A...635A.138G} and that are expected to encompass the range of uncertainties in the energy cutoff and the spectral slope of the MSPs injection spectrum. In particular, we select several possible parameter values for $\Gamma$, and $E_{\text{cut}}$, as shown in Table~\ref{tab:msp_spectrum}. Though each individual MSP will surely have a different age, spin-down luminosity, rotation period, magnetic field, hence a different $e^\pm$ injection spectrum, here we assume that the injection spectrum of the whole population of Galactic center MSPs is characterized by a mean injection spectrum.
 % We vary $\Gamma$ between 1.5 and 2.5, while $E_{\text{cut}}$ is varied between 10 and 100 TeV. The combinations of spectral parameters assumed in this chapter are listed in Table~\ref{tab:mspspectrum}. Note that our choice of spectral parameters represents the entire MSP population in the Galactic bulge.
@@ -1158,16 +1371,16 @@ pulsars (MSPs) in the Galactic bulge. Such a population would, along with the pr
 a putative Galactic bulge MSP population sufficient to explain the GCE for $e^\pm$ injection efficiencies in the range $\approx 2.9$--74.1\%, or higher, depending on the level of mismodeling of the Galactic diffuse emission components. On the other hand, for spectra softer than $E^{-2.5}$, a reliable CTA detection would require an unphysically large $e^\pm$ injection efficiency of $\gtrsim 158\%$. However, even this pessimistic conclusion may be avoided in the plausible event that
 MSP observational and/or modeling uncertainties can be reduced. We further find that, in the event that an IC signal were detected, CTA can successfully discriminate between an MSP and a dark matter origin for the radiating $e^\pm$.
 
-\section{Attribution}
+% \section{Attribution}
 
-This chapter is based on the following publication to which I have contributed:
-\begin{itemize}
-    % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-    \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-    % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-    % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
-\end{itemize}
-Oscar Macias led the collaboration. I improved the calculation of the IC signals using the \textsc{galprop} v56. Oscar Macias and Harm van Leijen did the CTA sensitivity estimate based on the improved IC maps. Oscar and I calculated the predicted $e^\pm$ injection efficiencies. Shin'ichiro Ando and Shunsaku Horiuchi contributed to the interpretation of the results.
+% This chapter is based on the following publication to which I have contributed:
+% \begin{itemize}
+%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
+% \end{itemize}
+% Oscar Macias led the collaboration. I improved the calculation of the IC signals using the \textsc{galprop} v56. Oscar Macias and Harm van Leijen did the CTA sensitivity estimate based on the improved IC maps. Oscar and I calculated the predicted $e^\pm$ injection efficiencies. Shin'ichiro Ando and Shunsaku Horiuchi contributed to the interpretation of the results.
 
 
 \section{Introduction}
@@ -1926,16 +2139,16 @@ The work of S.H.\ is supported by the U.S.\ Department of Energy under the award
 
 Millisecond pulsars are very likely the main source of gamma-ray emission from globular clusters. However, the relative contributions of two separate emission processes--curvature radiation from millisecond pulsar magnetospheres vs. inverse Compton emission from relativistic pairs launched into the globular cluster environment by millisecond pulsars--have long been unclear. To address this, we search for evidence of inverse Compton emission in 8-year \textit{Fermi}-LAT data from the directions of 157 Milky Way globular clusters. We find a mildly statistically significant (3.8$\sigma$) correlation between the measured globular cluster gamma-ray luminosities and their photon field energy densities. However, this may also be explained by a hidden correlation between the photon field densities and the stellar encounter rates of globular clusters. Analysed {\it in toto},  we demonstrate that the gamma-ray emission of globular clusters can be resolved spectrally into two components:  i) an exponentially cut-off power law and ii) a pure power law. The latter component--which we uncover at a significance of 8.2$\sigma$--{has a power index of 2.79 $\pm$ 0.25. It} is most naturally interpreted as inverse Compton emission by cosmic-ray electrons and positrons injected by millisecond pulsars. We find the luminosity of this {power-law} component is comparable to, or slightly smaller than, the luminosity of the curved component, suggesting the fraction of millisecond pulsar spin-down luminosity into relativistic leptons is similar to the fraction of the spin-down luminosity into prompt magnetospheric radiation.
 
-\section{Attribution}
+% \section{Attribution}
 
-This chapter is based on the following publication of which I am the first author:
-\begin{itemize}
-    % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-    % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-    \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-    % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
-\end{itemize}
-I led the collaboration and wrote the paper. Oscar Macias and I developed the data analysis pipeline. I did the \textit{Fermi} data analysis for the globular clusters. I built the pipelines for the correlation analysis and spectral analysis. Suggestions from Shunsaku Horichi and Roland M. Crocker largely improved the analyses and led to the final results. David M. Nataf helped the interpretation of the results.
+% This chapter is based on the following publication of which I am the first author:
+% \begin{itemize}
+%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
+% \end{itemize}
+% I led the collaboration and wrote the paper. Oscar Macias and I developed the data analysis pipeline. I did the \textit{Fermi} data analysis for the globular clusters. I built the pipelines for the correlation analysis and spectral analysis. Suggestions from Shunsaku Horichi and Roland M. Crocker largely improved the analyses and led to the final results. David M. Nataf helped the interpretation of the results.
 
 \section{Introduction}\label{sec:intro}
 
@@ -2500,24 +2713,16 @@ The former is disfavoured by its requiring kick velocities different between the
 %
 Positron propagation prior to annihilation can explain the overall phenomenology of the 511\,keV signal for positrons injection energies $\lesssim 1.4$\,MeV, suggesting a nucleosynthesis origin.
 
-\section{Attribution}
+% \section{Attribution}
 
-This chapter is based on the following publication to which I have contributed:
-\begin{itemize}
-    % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-    % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-    % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-    \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society: Letters, vol. 509, no. 1, 2021}
-\end{itemize}
-Thomas Siegert led the collaboration, and performed the INTEGRAL/SPI data analysis.
-%
-Thomas Siegert and I performed the 3D template blurring. Shunsaku Horiuchi and I performed the supernova kick analysis.
-%
-Oscar Macias provided astrophysical emission templates and, together with Francesca Calore, contributed to dark matter physics and the connection to the \textit{Fermi}-LAT GeV signal.
-%
-Fiona H. Panther contributed to positron annihilation physics and cosmic-ray propagation.
-%
-Roland M. Crocker contributed to the interpretational aspects and crucial inputs to the paper.
+% This chapter is based on the following publication to which I have contributed:
+% \begin{itemize}
+%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
+%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
+%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
+%     \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society: Letters, vol. 509, no. 1, 2021}
+% \end{itemize}
+% Thomas Siegert led the collaboration, and performed the INTEGRAL/SPI data analysis. Thomas Siegert and I performed the 3D template blurring. Shunsaku Horiuchi and I performed the supernova kick analysis. Oscar Macias provided astrophysical emission templates and, together with Francesca Calore, contributed to dark matter physics and the connection to the \textit{Fermi}-LAT GeV signal. Fiona H. Panther contributed to positron annihilation physics and cosmic-ray propagation. Roland M. Crocker contributed to the interpretational aspects and crucial inputs to the paper.
 
 \section{Introduction}
 %
@@ -2939,7 +3144,7 @@ This could be tentatively interpreted as electron-positron pairs from dark matte
 However, this would only be case if the positrons annihilate close to their production sites, as described by a dark matter halo.
 %
 Here we use the generalized NFW profile (see Sec.~\ref{sse:indirect}),
-\begin{equation}\label{eq:NFW_2}
+\begin{equation}
   \rho_\mathrm{DM}(x, y, z) = \dfrac{\rho_0}{\left(\dfrac{r}{R_s}\right)^\gamma\left(1+\dfrac{r}{R_s}\right)^{(3-\gamma)}},
 \end{equation}
 \noindent with $r = \sqrt{x^2 + y^2 + z^2}$ and $R_s=20\,\mrm{kpc}$ \citep{2014PhRvD..90b3526A}, as was shown to fit both the GeV \citep{2011PhRvD..84l3005H,2014PhRvD..90b3526A,2016PDU....12....1D} as well as the 511\,keV data \citep{2012JCAP...04..022V,Skinner2014_511}.
