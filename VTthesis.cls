@@ -232,7 +232,8 @@ frame=single,
 \def\dedication#1{\booltrue{@ded} \gdef\@dedication{#1}}
 \def\keywords#1{\booltrue{@key} \gdef\@keywords{#1}}
 
-\newcommand{\@vtcopyright}{Copyright \@copyrightyear, \@author}
+% \newcommand{\@vtcopyright}{Copyright \@copyrightyear, \@author}
+\newcommand{\@vtcopyright}{Copyright 2021, \@author}
 
 % Set up the header and footer
 \RequirePackage{fancyhdr}

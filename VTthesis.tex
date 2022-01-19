@@ -12,7 +12,8 @@
 % 
 % In addition to the standard formatting options, the following options are defined for the VTthesis class: proposal, prelim, doublespace, draft. 
 
-\documentclass[doublespace,nopageskip]{VTthesis} % nopageskip - Removes arbitrary blank pages.
+\documentclass[doublespace,nopageskip]{VTthesis}
+% \documentclass[doublespace,nopageskip]{VTthesis} % nopageskip - Removes arbitrary blank pages.
 
 % Using the following header instead will create a draft copy of your thesis
 % \documentclass[doublespace,draft]{VTthesis}
@@ -56,7 +57,7 @@
 \degree{Doctor of Philosophy} 
 
 % This should be your defense date:
-\submitdate{Dec 10, 2021} 
+\submitdate{December 10, 2021} 
 
 % Committee members. Only have five readers and one chair available.
 % Only use the ones you need and don't include the ones you don't need.
@@ -75,6 +76,8 @@
 % The dedication and acknowledgement pages are optional. Comment them out to remove them.
 % \dedication{This is where you put your dedications.}
 \acknowledge{
+\pagenumbering{roman}
+\setcounter{page}{6}
 I would first like to thank my supervisor, Dr. Shunsaku Horiuchi, for his continuous advice and support during my Ph.D. He has taught me how to become an independent researcher by sharing not only immense knowledge but also invaluable experiences. I am also profoundly grateful to the committee members, Dr. Giti Khodaparast, Dr. John Simonetti, and Dr. Tatsu Takeuchi. They have been encouraging and supportive and guided every step of mine to the completeness of this dissertation.
 \\
 I would like to thank my collaborators. They are Dr. Shin'ichiro Ando, Dr. Francesca Calore, Dr. Roland M. Crocker, Ian Holst, Dr. Dan Hooper, Dr. Shunsaku Horiuchi, Dr. Gordan Krnjaic, Harm van Leijen, Dr. Oscar Macias, Varun Mathur, Dr. Djordje Minic, Dr. David M. Nataf, Dr. Fiona H. Panther, Dr. Ian Shoemaker, Dr. Thomas Siegert, Dr. Tatsu Takeuchi, and Dr. Natalia Tapia Arellano. It has been delightful to work with you in the past years. I have enjoyed the discussions we had, and I have learned a tremendous amount of physics from you.
@@ -90,12 +93,14 @@ Last but not least, I thank my family for their unconditional love and support, 
 
 % The abstract is required.
 \abstract{
+\pagenumbering{gobble}
 The \textit{Fermi} Large Area Telescope has observed a gamma-ray excess toward the center of the Galaxy at  $\sim$ GeV energies. The spectrum and intensity of the excess are consistent with the annihilation of dark matter with a mass of $\sim$ 100 GeV and a velocity-averaged cross section of $\sim 10^{-26}$ cm$^3$ s$^{-1}$. In the meantime, a population of unresolved millisecond pulsars (MSPs) in the Galactic center remains a possible source of the excess. Furthermore, recent analyses have shown that the excess prefers the spatial morphology of the stellar bulge distribution in the Galactic center, supporting a MSP origin. The new discovery makes it imperative to further study the signals from MSPs. 
 \\
 This dissertation studies the gamma-ray emission from Galactic millisecond pulsars to provide new insights into the origin of the Galactic center excess. Using the \textsc{galprop} code, we simulate the propagation of $e^\pm$ injected by the putative MSPs in the Galactic bulge and calculate the inverse Compton (IC) emission caused by the $e^\pm$ losing energy in the interstellar radiation field. We find recognizable features in the spatial maps of the IC. Above TeV energies, the IC morphology tends to follow the distribution of the injected $e^\pm$. Then, we study the Cherenkov Telescope Array (CTA) sensitivity to the IC signal from MSPs. We find that the CTA has the potential to robustly discover the IC signature when the MSP $e^\pm$ injection efficiencies are in the range $\approx$ 2.9-74.1\%. The CTA can also discriminate between an MSP and a dark matter origin for the radiating $e^\pm$ based on their different spatial maps.
 \\
 Next, we analyze the \textit{Fermi} data from directions of Galactic globular clusters. The globular clusters are thought to be shining in gamma rays because of the MSP population they host. By analyzing their gamma-ray spectra, we reveal evidence for an IC component in the high-energy tail of \textit{Fermi} data. Based on the IC component in the globular cluster spectra, the $e^\pm$ injection efficiency of millisecond pulsars is estimated to be slightly smaller than 10\%.
 \\
+\thispagestyle{empty}
 Finally, we study the spatial morphology of the 511 keV signal toward the Galactic center using data from {INTEGRAL/SPI}. We confirm that the 511 keV signal also traces the old stellar population in the Galactic bulge, which is similar to the \textit{Fermi} GeV excess. Using a 3D smoothing kernel, we find that the signal is smeared out over a characteristic length scale of 150 $\pm$ 50 pc. We show that positron propagation prior to annihilation can explain the overall phenomenology of the 511 keV signal.
 }
 
@@ -160,46 +165,11 @@ Chapter 3--6 are reproduced based on the following papers I have contributed to:
     % Oscar Macias and Harm van Leijen did the CTA sensitivity estimate based on the improved IC maps. 
     Oscar and I calculated the predicted $e^\pm$ injection efficiencies. Shin'ichiro Ando and Shunsaku Horiuchi contributed to the interpretation of the results.
     \item Chapter~\ref{ch:globular_cluster} is based on Paper~\cite{2021MNRAS.507.5161S} \emph{``Evidence for a high-energy tail in the gamma-ray spectra of globular clusters'', Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021.} We find evidence for inverse Compton emission from globular clusters. I led the collaboration and wrote the paper. Oscar Macias and I developed the data analysis pipeline. I did the \textit{Fermi} data analysis for the globular clusters. I built the pipelines for the correlation analysis and spectral analysis. Suggestions from Shunsaku Horichi and Roland M. Crocker largely improved the analyses and led to the final results. David M. Nataf helped the interpretation of the results.
+    \thispagestyle{plain}
     \item Chapter~\ref{ch:511keV} is based on Paper~\cite{2022MNRAS.509L..11S} \emph{``Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?'', Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, Monthly Notices of the Royal Astronomical Society: Letters, vol. 509, no. 1, 2021.} We study the morphology of the Galactic 511 keV signal. Thomas Siegert led the collaboration, and performed the INTEGRAL/SPI data analysis. Thomas Siegert and I performed the 3D template blurring. Shunsaku Horiuchi and I performed the supernova kick analysis. Oscar Macias provided astrophysical emission templates and, together with Francesca Calore, contributed to dark matter physics and the connection to the \textit{Fermi}-LAT GeV signal. Fiona H. Panther contributed to positron annihilation physics and cosmic-ray propagation. Roland M. Crocker contributed to the interpretational aspects and crucial inputs to the paper.
 \end{itemize}
 
 \thispagestyle{plain}
-
-% For the rest of this chapter, we introduce the evidence for dark matter, the WIMP model, and the dark matter searching methods. In Chapter~\ref{ch:GCE}, the GCE is reviewed, including its dark matter and millisecond pulsar interpretations. Recent morphological analyses of the GCE related to the stellar bulge distributions are also mentioned. Chapter~\ref{ch:IC_MSPs} calculates the inverse Compton emission from the putative millisecond pulsar population responsible for the GCE, and Chapter~\ref{ch:CTA} studies the Cherenkov Telescope Array sensitivity to such an inverse Compton signal. We present evidence for inverse Compton emission from globular clusters in Chapter~\ref{ch:globular_cluster}. We study the morphology of the Galactic 511 keV signal in Chapter~\ref{ch:511keV}. The dissertation is concluded in Chapter~\ref{ch:summary}.
-
-% Chapter~\ref{ch:IC_MSPs} is based on the following publication of which I am the first author:
-% \begin{itemize}
-%     \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-% \end{itemize}
-
-
-% Chapter~\ref{ch:CTA} is based on the following publication to which I have contributed:
-% \begin{itemize}
-%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-%     \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
-% \end{itemize}
-% Oscar Macias led the collaboration. I improved the calculation of the IC signals using the \textsc{galprop} v56. Oscar Macias and Harm van Leijen did the CTA sensitivity estimate based on the improved IC maps. Oscar and I calculated the predicted $e^\pm$ injection efficiencies. Shin'ichiro Ando and Shunsaku Horiuchi contributed to the interpretation of the results.
-
-% This chapter is based on the following publication of which I am the first author:
-% \begin{itemize}
-%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-%     \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-%     % \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society Letters, accepted for publication, 2021}
-% \end{itemize}
-% I led the collaboration and wrote the paper. Oscar Macias and I developed the data analysis pipeline. I did the \textit{Fermi} data analysis for the globular clusters. I built the pipelines for the correlation analysis and spectral analysis. Suggestions from Shunsaku Horichi and Roland M. Crocker largely improved the analyses and led to the final results. David M. Nataf helped the interpretation of the results.
-
-% This chapter is based on the following publication to which I have contributed:
-% \begin{itemize}
-%     % \item \emph{Song, D., Macias, O., and Horiuchi, S., “Inverse Compton emission from millisecond pulsars in the Galactic bulge”, Physical Review D, vol. 99, no. 12, 2019}
-%     % \item \emph{Macias, O., van Leijen, H., Song, D., Ando, S., Horiuchi, S., and Crocker, R. M., “Cherenkov Telescope Array sensitivity to the putative millisecond pulsar population responsible for the Galactic Centre excess”, Monthly Notices of the Royal Astronomical Society, vol. 506, no. 2, 2021}
-%     % \item \emph{Song, D., Macias, O., Horiuchi, S., Crocker, R. M., and Nataf, D. M., “Evidence for a high-energy tail in the gamma-ray spectra of globular clusters”, Monthly Notices of the Royal Astronomical Society, vol. 507, no. 4, 2021}
-%     \item \emph{Siegert T., Crocker R.~M., Macias O., Panther F.~H., Calore F., Song D., Horiuchi S, “Measuring the smearing of the Galactic 511 keV signal: positron propagation or supernova kicks?”, Monthly Notices of the Royal Astronomical Society: Letters, vol. 509, no. 1, 2021}
-% \end{itemize}
-% Thomas Siegert led the collaboration, and performed the INTEGRAL/SPI data analysis. Thomas Siegert and I performed the 3D template blurring. Shunsaku Horiuchi and I performed the supernova kick analysis. Oscar Macias provided astrophysical emission templates and, together with Francesca Calore, contributed to dark matter physics and the connection to the \textit{Fermi}-LAT GeV signal. Fiona H. Panther contributed to positron annihilation physics and cosmic-ray propagation. Roland M. Crocker contributed to the interpretational aspects and crucial inputs to the paper.
-
 
 
 \chapter{Introduction} \label{ch:introduction}
